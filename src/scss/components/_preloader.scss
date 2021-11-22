@@ -1,0 +1,82 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+
+  background-color: $primary;
+  transition: 0.6s all ease;
+  pointer-events: none;
+
+  &__mosquito {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: circle-preloader 1.2s infinite linear;
+  }
+
+  &__virus {
+    position: absolute;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+
+    mix-blend-mode: multiply;
+    pointer-events: none;
+
+    &--one {
+      width: 18vw;
+      top: 0;
+      left: 0;
+      opacity: 0.7;
+    }
+
+    &--two {
+      width: 12vw;
+      top: 70%;
+      left: 150px;
+      opacity: 0.6;
+    }
+
+    &--three {
+      width: 9vw;
+      top: 70%;
+      left: 65%;
+      opacity: 0.5;
+    }
+
+    &--four {
+      width: 13vw;
+      top: 10%;
+      left: 80%;
+      opacity: 0.8;
+    }
+
+    &--five {
+      width: 12vw;
+      top: 40%;
+      left: 80%;
+      opacity: 0.7;
+    }
+  }
+}
+
+@keyframes circle-preloader {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

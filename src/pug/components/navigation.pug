@@ -1,0 +1,21 @@
+- var values = [{name: 'Chikungunya Disease', id: 'one'}, {name: 'What Is Chikungunya', id: 'two'}, {name: 'Staying Protected', id: 'three'}, {name: 'Share Your Story And Help Raise Awareness', id: 'four'}, {name: 'Frequently Asked Questions', id: 'five'}, {name: 'Contact Us', id: 'six'}, {name: 'References', id: 'seven'}];
+
+header.navigation
+  .container
+    nav.navigation-links
+      .navigation-links__item.active(data-section=values[0].id)
+        span.navigation-links__number 1
+        p.navigation-links__text= values[0].name
+      - for (var x = 1; x < values.length; x++)
+        .navigation-links__item(data-section=values[x].id)
+          span.navigation-links__number= x + 1
+          p.navigation-links__text= values[x].name
+    
+    .navigation-share
+      span Share
+      img(src="/img/share-icon.svg", alt="")
+
+    button.navigation-hamburger
+      span
+      span
+      span

@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // scroll-behavior: smooth;
+  scrollbar-width: none;
+  
+  // cursor: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  color: $black-light;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+
+  background-image: url(/img/map/map-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+@media (max-width: $main) {
+  main {
+    flex-direction: column;
+  }
+}
+
+img {
+  display: flex;
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+  color: $secondary;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  // cursor: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border: none;
+}
+
+embed,
+iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+}

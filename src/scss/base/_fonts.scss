@@ -1,0 +1,129 @@
+// Inlcude fonts
+@include font-face('OpenSans', 'OpenSans-Regular', 400);
+@include font-face('OpenSans', 'OpenSans-Italic', 400, italic);
+@include font-face('OpenSans', 'OpenSans-Medium', 500);
+@include font-face('OpenSans', 'OpenSans-Bold', 700);
+
+@include font-face('Montserrat', 'Montserrat-Regular');
+@include font-face('Montserrat', 'Montserrat-Medium', 500);
+@include font-face('Montserrat', 'Montserrat-Medium', 600);
+@include font-face('Montserrat', 'Montserrat-Bold', 700);
+
+// Main Fonts
+.title-h1 {
+  font-family: 'Montserrat';
+  font-size: 50px;
+  line-height: 58px;
+  font-weight: 700;
+  color: $secondary;
+  text-transform: uppercase;
+
+  @media (max-width: $main) {
+    font-size: 35px;
+    line-height: 42px;
+  }
+}
+
+.title-h2 {
+  font-family: 'Montserrat';
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: 500;
+  color: $secondary;
+  text-transform: uppercase;
+}
+
+.title-h3 {
+  font-family: 'Montserrat';
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.title-h4 {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #2F5349;
+}
+
+.title-h5 {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #2F5349;
+}
+
+.subtitle {
+  color: $primary;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.big-text {
+  font-family: 'MontSerrat';
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.big-text--bold {
+  font-family: 'MontSerrat';
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.main-text {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.main-text--bold {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+// Button
+.main-button {
+  padding: 12px 30px;
+
+  color: $black;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  border-radius: 48px;
+  border: 2px solid $secondary;
+  transition: 0.3s all ease;
+
+  &:hover {
+    background-color: $secondary;
+    color: $white;
+  }
+}
+
+// Figure
+.main-figure {
+  margin-top: 10px;
+
+  & img {
+    margin: 5px auto 0;
+  }
+
+  & figcaption {
+    margin-top: 15px;
+
+    font-size: 14px;
+    line-height: 20px;
+    font-style: italic;
+  }
+}
+
+.main-list {
+  font-size: 15px;
+  line-height: 20px;
+}

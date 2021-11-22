@@ -1,0 +1,82 @@
+.main-form {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 25px;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: flex-start;
+
+    margin-bottom: 8px;
+
+    & input + span {
+      flex-shrink: 0;
+
+      display: block;
+      width: 15px;
+      height: 15px;
+
+      background-color: $white;
+      border-radius: 2px;
+    }
+
+    & span {
+      font-family: 'OpenSans';
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    & a {
+      color: $black;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  & h4 {
+    margin-bottom: 7px;
+
+    font-family: 'OpenSans';
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+
+    @media (max-width: $main) {
+      margin-bottom: 5px;
+    }
+  }
+
+  & input[type="checkbox"] + span,
+  & input[type="radio"] + span {
+    margin-right: 10px;
+    margin-top: 3px;
+  }
+
+  &__button {
+    align-self: flex-start;
+
+    margin-top: 5px;
+  }
+
+  &__error {
+    position: absolute;
+    top: calc(100% + 2px);
+
+    display: none;
+    margin-top: 5px;
+
+    color: #9F4E14;
+    font-size: 12px;
+    line-height: 10px;
+  }
+}

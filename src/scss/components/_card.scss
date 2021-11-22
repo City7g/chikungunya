@@ -1,0 +1,227 @@
+.card {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 18px 50px 18px 18px;
+
+  background-color: rgba($white, 0.75);
+  transition: 0.3s all ease;
+  border-radius: 10px;
+
+  @media (max-width: $main) {
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+
+    max-width: 320px;
+    max-height: 46px;
+    padding: 15px;
+
+    overflow: hidden;
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, .2);
+    transition: 0.5s max-height ease;
+
+    &.active {
+      max-height: 500px;
+      background-color: rgba($white, 1);
+    }
+  }
+
+  @media (min-width: $main2) {
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      width: 0;
+      height: 0;
+      transform: translate(100%, -50%);
+  
+      border: 10px solid transparent;
+      border-left: 12px solid rgba($white, .75);
+      content: '';
+    }
+
+    &--left::before {
+      left: 0;
+      transform: translate(-100%, -50%);
+
+      border: 10px solid transparent;
+      border-right: 12px solid rgba($white, .75);
+    }
+  }
+
+  &__img {
+    max-width: 178px;
+    max-height: 174px;
+    margin: 0 auto;
+
+    position: absolute;
+
+    @media (max-width: $main) {
+      position: relative;
+    //   top: 0 !important;
+    //   left: 0 !important;
+    //   right: 0 !important;
+    //   bottom: 0 !important;
+    //   transform: none !important;
+    }
+
+    @media (min-width: $main2) {
+      &--right {
+        top: 50%;
+        left: calc(100% + 5px);
+        transform: translateY(-50%);
+      }
+  
+      &--left-bottom {
+        top: 50%;
+        right: calc(100% + 5px);
+        // transform: translateY(-50%);
+      }
+  
+
+      &--top {
+        bottom: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+  
+      &--bottom {
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &--bottom-right {
+        top: calc(100% + 10px);
+        left: 100%;
+        transform: translateX(-50%);
+      }
+  
+      &--top-right {
+        top: 0;
+        left: calc(100% + 5px);
+        transform: translate(-30%, -80%);
+      }
+  
+      &--border {
+        border: 5px solid $white;
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, .5);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @media (max-width: $main) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @media (max-width: $main) {
+      display: block;
+
+      margin-top: 15px;
+    }
+  }
+
+  &__plus {
+    @media (min-width: $main2) {
+      position: absolute;
+      top: 13px;
+      right: 10px;
+      width: 26px;
+      height: 26px;
+      // transform: translateY(-50%);
+
+      background-color: $primary;
+      transition: 0.5s all ease;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotate(180deg);
+      }
+
+      &::after,
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background-color: $white;
+        border-radius: 2px;
+
+        content: '';
+      }
+
+      &::after {
+        width: 12px;
+        height: 2px;
+      }
+
+      &::before {
+        height: 12px;
+        width: 2px;
+      }
+    }
+
+    @media (max-width: $main) {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+
+      border: solid $white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      transition: 0.3s all ease;
+    }
+  }
+
+  @media (max-width: $main) {
+    &.active &__plus {
+      transform: rotate(135deg);
+    }
+  }
+
+  // Delete
+  &::after {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background-color: red;
+    // content: '';
+  }
+}
+
+.card-wrap {
+  @media (max-width: $main) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}

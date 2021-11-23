@@ -5,75 +5,87 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 window.addEventListener('load', () => {
-  gsap.to('#two .section__wrap', {
-    scrollTrigger: {
-      trigger: '#two',
-      start: '0% ' + document.querySelector('#two').offsetLeft,
-      end: '100% 0%',
-      horizontal: true,
-      scrub: true
-    },
-    x: () => {
-      return -(document.querySelector('#two .section__wrap').scrollWidth - document.querySelector('#two').offsetWidth)
-    },
-    ease: 'linear'
-  })
+  if (document.querySelector('#two')) {
+    gsap.to('#two .section__wrap', {
+      scrollTrigger: {
+        trigger: '#two',
+        start: '0% ' + document.querySelector('#two').offsetLeft,
+        end: '100% 0%',
+        horizontal: true,
+        scrub: true
+      },
+      x: () => {
+        return -(document.querySelector('#two .section__wrap').scrollWidth - document.querySelector('#two').offsetWidth)
+      },
+      ease: 'linear'
+    })
+  }
 
-  gsap.to('#three .section__wrap', {
-    scrollTrigger: {
-      trigger: '#three',
-      start: '0% 100%',
-      end: '100% 0%',
-      horizontal: true,
-      scrub: true
-    },
-    x: () => {
-      return -(document.querySelector('#three .section__wrap').scrollWidth - document.querySelector('#three').offsetWidth)
-    },
-    ease: 'linear'
-  })
+  if (document.querySelector('#three')) {
+    gsap.to('#three .section__wrap', {
+      scrollTrigger: {
+        trigger: '#three',
+        start: '0% 100%',
+        end: '100% 0%',
+        horizontal: true,
+        scrub: true
+      },
+      x: () => {
+        return -(document.querySelector('#three .section__wrap').scrollWidth - document.querySelector('#three').offsetWidth)
+      },
+      ease: 'linear'
+    })
+  }
 
-  gsap.to('#four .section__wrap', {
-    scrollTrigger: {
-      trigger: '#four',
-      start: '0% 100%',
-      end: '100% 0%',
-      horizontal: true,
-      scrub: true
-    },
-    x: () => {
-      return -(document.querySelector('#four .section__wrap').scrollWidth - document.querySelector('#four').offsetWidth)
-    },
-    ease: 'linear'
-  })
+  if (document.querySelector('#four')) {
+    gsap.to('#four .section__wrap', {
+      scrollTrigger: {
+        trigger: '#four',
+        start: '0% 100%',
+        end: '100% 0%',
+        horizontal: true,
+        scrub: true
+      },
+      x: () => {
+        return -(document.querySelector('#four .section__wrap').scrollWidth - document.querySelector('#four').offsetWidth)
+      },
+      ease: 'linear'
+    })
+  }
 
-  gsap.to('#five .section__wrap', {
-    scrollTrigger: {
-      trigger: '#five',
-      start: '0% 100%',
-      end: '100% 0%',
-      horizontal: true,
-      scrub: true
-    },
-    x: () => {
-      return -(document.querySelector('#five .section__wrap').scrollWidth - document.querySelector('#five').offsetWidth)
-    },
-    ease: 'linear'
-  })
 
-  gsap.to('#seven .section__wrap', {
-    scrollTrigger: {
-      trigger: '#seven',
-      start: '0% 100%',
-      end: '100% 0%',
-      horizontal: true,
-      scrub: true
-    },
-    x: () => {
-      return -(document.querySelector('#seven .section__wrap').scrollWidth - document.querySelector('#seven').offsetWidth)
-    },
-    ease: 'linear'
-  })
+  if (document.querySelector('#five')) {
+    gsap.to('#five .section__wrap', {
+      scrollTrigger: {
+        trigger: '#five',
+        start: '0% 100%',
+        end: '100% 0%',
+        horizontal: true,
+        scrub: true
+      },
+      x: () => {
+        return -(document.querySelector('#five .section__wrap').scrollWidth - document.querySelector('#five').offsetWidth)
+      },
+      ease: 'linear'
+    })
+  }
+
+  if (document.querySelector('#seven')) {
+    gsap.to('#seven .section__wrap', {
+      scrollTrigger: {
+        trigger: '#seven',
+        start: '0% 100%',
+        end: '100% 0%',
+        horizontal: true,
+        scrub: true
+      },
+      x: () => {
+        return -(document.querySelector('#seven .section__wrap').scrollWidth - document.querySelector('#seven').offsetWidth)
+      },
+      ease: 'linear'
+    })
+  }
+
 })
 
 
@@ -128,15 +140,8 @@ const customScroll = () => {
 let currentSectionInView;
 
 const scroll = () => {
-
-
-
-
-
   // Custom horizontal scroll
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 992) {
-    console.log('tel')
-  } else {
+  if (window.innerWidth >= 1200) {
     window.addEventListener('wheel', e => {
       e.preventDefault()
 
@@ -200,7 +205,7 @@ const scroll = () => {
         }
       })
 
-      document.querySelector(`.navigation-links__item[data-section="${currentSectionInView}"]`).classList.add('active')
+      document.querySelector(`a.navigation-links__item[href="#${currentSectionInView}"]`).classList.add('active')
 
 
     })
@@ -248,12 +253,11 @@ const scroll = () => {
 
 window.addEventListener('load', () => {
   setTimeout(() => {
-    console.log(window.pageXOffset)
-    scrollX = window.pageXOffset
-    currentScrollX = window.pageXOffset
+    scrollX = 0
+    currentScrollX = 0
 
     window.scrollTo(currentScrollX, 0)
-  }, 100);
+  }, 5);
 })
 
 // window.addEventListener('scroll', () => {

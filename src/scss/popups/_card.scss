@@ -1,0 +1,87 @@
+.popup-card {
+  &__wrap {
+    position: relative;
+
+    // display: grid;
+    // grid-template-columns: repeat(2, 314px);
+    // align-items: flex-start;
+    // gap: 0 30px;
+
+    // width: 100%;
+    width: 310px;
+    max-height: 100%;
+
+    padding: 20px 25px;
+
+    border-radius: 10px;
+    background-color: $white;
+    overflow: auto;
+
+    @media (max-width: $main) {
+      grid-template-columns: 1fr;
+
+      padding: 25px 20px 20px;
+
+      border-radius: 15px;
+    }
+  }
+
+  & p {
+    margin-top: 10px;
+  }
+
+  &__title {
+    color: $primary;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+  }
+
+  &__img {
+    width: 100%;
+    max-height: 250px;
+
+    margin-top: 10px;
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+
+    background-color: $secondary;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @media (max-width: $main) {
+      top: 18px;
+      right: 18px;
+      width: 18px;
+      height: 18px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 12px;
+      height: 2px;
+
+      background-color: $white;
+      border-radius: 2px;
+      content: '';
+
+      @media (max-width: $main) {
+        width: 10px;
+      }
+    }
+  }
+}

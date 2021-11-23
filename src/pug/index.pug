@@ -1,4 +1,4 @@
-- const prod = true
+- const prod = false
 
 doctype html
 html(lang="en")
@@ -34,8 +34,10 @@ html(lang="en")
       include ./sections/references
     
     //- Popups
-    include ./popups/thank-you
     include ./popups/information
+    include ./popups/card
+    include ./popups/form
+    include ./popups/thank-you
 
     //- if prod
       //- include ./components/cursor

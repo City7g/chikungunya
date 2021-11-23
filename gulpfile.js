@@ -12,7 +12,7 @@ function browserSync() {
     server: {
       baseDir: './dist/'
     },
-    posr: 3000,
+    posr: 8080,
     notify: false
   })
 }

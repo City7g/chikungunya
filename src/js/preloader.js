@@ -39,14 +39,22 @@ const animVirus = item => {
   let virusLeft = window.getComputedStyle(item).getPropertyValue('left')
   virusTop = +virusTop.substr(0, virusTop.length - 2);
   virusLeft = +virusLeft.substr(0, virusLeft.length - 2);
-  const randomLeft = Math.random() * (100) - 50
-  const randomTop = Math.random() * (100) - 50
+  const cof = window.innerWidth > 991 ? 100 : 30
+  let randomLeft = Math.random() * (cof) - cof/2
+  let randomTop = Math.random() * (cof) - cof/2
+  if(randomLeft < 5 && randomLeft > -5) {
+    randomLeft = 5
+  }
+  if(randomTop < 5 && randomTop > -5) {
+    randomTop = 5
+  }
+
   virusTop += randomLeft;
   if (virusTop < 100) {
     virusTop = 100
   }
-  if (virusTop > window.innerWidth - 100) {
-    virusTop = window.innerWidth - 100
+  if (virusTop > window.innerHeight - 100) {
+    virusTop = window.innerHeight - 100
   }
   virusLeft += randomTop;
   if (virusLeft < 100) {
@@ -55,9 +63,9 @@ const animVirus = item => {
   if (virusLeft > window.innerWidth - 100) {
     virusLeft = window.innerWidth - 100
   }
+
   item.style.top = `${virusTop}px`
   item.style.left = `${virusLeft}px`
-  console.log('Tik')
 }
 
 if (document.querySelector('.preloader__virus')) {

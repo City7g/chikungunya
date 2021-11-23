@@ -9,6 +9,7 @@
   background-color: rgba($white, 0.75);
   transition: 0.3s all ease;
   border-radius: 10px;
+  cursor: pointer;
 
   @media (max-width: $main) {
     position: relative;
@@ -56,11 +57,11 @@
   }
 
   &__img {
+    position: absolute;
+
     max-width: 178px;
     max-height: 174px;
     margin: 0 auto;
-
-    position: absolute;
 
     @media (max-width: $main) {
       position: relative;

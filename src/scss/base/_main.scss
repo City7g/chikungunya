@@ -5,6 +5,7 @@
 }
 
 html {
+  overflow: hidden;
   // scroll-behavior: smooth;
   scrollbar-width: none;
   
@@ -67,8 +68,14 @@ ul {
   list-style: none;
 }
 
-input {
+input,
+textarea {
   border: none;
+}
+
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: $secondary $white;
 }
 
 embed,

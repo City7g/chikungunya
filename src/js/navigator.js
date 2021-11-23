@@ -1,12 +1,13 @@
 import { setScrollX, setCurrentScrollX } from './scroll'
 
 const navigator = () => {
-  document.querySelectorAll('.navigation-links__item').forEach(item => {
-    item.addEventListener('click', () => {
-      // console.log(document.querySelector(`#${item.getAttribute('data-section')}`))
-      if (document.querySelector(`#${item.getAttribute('data-section')}`)) {
-        document.querySelector(`#${item.getAttribute('data-section')}`).scrollIntoView({ inline: "center", behavior: "smooth" });
-        const currentScrollX = document.querySelector(`#${item.getAttribute('data-section')}`).offsetLeft + document.querySelector(`#${item.getAttribute('data-section')}`).clientWidth / 2 - window.innerWidth / 2
+  document.querySelectorAll('a[href^="#"]').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault()
+      // console.log(document.querySelector(`#${item.hash.substring(1)}`))
+      if (document.querySelector(`#${item.hash.substring(1)}`)) {
+        document.querySelector(`#${item.hash.substring(1)}`).scrollIntoView({ inline: "center", behavior: "smooth" });
+        const currentScrollX = document.querySelector(`#${item.hash.substring(1)}`).offsetLeft + document.querySelector(`#${item.hash.substring(1)}`).clientWidth / 2 - window.innerWidth / 2
         setScrollX(currentScrollX)
         setCurrentScrollX(currentScrollX)
       }

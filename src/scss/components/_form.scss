@@ -10,11 +10,23 @@
     margin-bottom: 25px;
   }
 
+  &__textarea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 25px;
+
+    & textarea {
+      // flex-grow: 1;
+    }
+  }
+
   &__checkbox {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
-    margin-bottom: 8px;
+    margin-bottom: 11px;
 
     & input + span {
       flex-shrink: 0;
@@ -49,7 +61,7 @@
     font-family: 'OpenSans';
     font-size: 15px;
     line-height: 22px;
-    font-weight: 400;
+    font-weight: 600;
 
     @media (max-width: $main) {
       margin-bottom: 5px;
@@ -59,7 +71,7 @@
   & input[type="checkbox"] + span,
   & input[type="radio"] + span {
     margin-right: 10px;
-    margin-top: 3px;
+    margin-top: 0px;
   }
 
   &__button {

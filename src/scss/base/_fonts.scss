@@ -43,15 +43,15 @@
 .title-h4 {
   font-size: 15px;
   line-height: 20px;
-  font-weight: 400;
-  color: #2F5349;
+  font-weight: 700;
+  color: $primary;
 }
 
 .title-h5 {
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
-  color: #2F5349;
+  color: $primary;
 }
 
 .subtitle {
@@ -93,7 +93,7 @@
   color: $black;
   font-size: 15px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
 
   border-radius: 48px;

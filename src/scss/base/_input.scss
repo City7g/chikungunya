@@ -1,7 +1,9 @@
 input[type="text"],
 input[type="email"],
 input[type="number"],
-input[type="tel"] {
+input[type="tel"],
+textarea {
+  width: 100%;
   padding: 11px;
 
   font-family: 'OpenSans';
@@ -14,6 +16,10 @@ input[type="tel"] {
   &:focus,
   &:active {
     outline: 2px solid $secondary;
+  }
+
+  &::placeholder {
+    font-style: italic;
   }
 }
 
@@ -29,4 +35,8 @@ input[type="radio"] {
   &:checked + span {
     background-color: $secondary;
   }
+}
+
+textarea {
+  resize: none;
 }

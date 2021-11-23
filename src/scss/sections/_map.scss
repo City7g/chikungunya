@@ -18,10 +18,15 @@
   //   content: '';
   // }
 
-  @media (min-width: $main) and (max-height: 900px) {
-    height: 120vh;
-    transform: translateY(-10%);
-  }
+  // @media (min-width: $main) and (max-height: 900px) {
+  //   height: 120vh;
+  //   transform: translateY(-5%);
+  // }
+
+  // @media (min-width: $main) and (max-height: 780px) {
+  //   height: 140vh;
+  //   transform: translateY(-15%);
+  // }
 
   @media (max-width: $main) {
     display: flex;
@@ -51,8 +56,11 @@
   
   &__bg {
     height: 100%;
+
     object-fit: cover;
     object-position: center;
+    
+    opacity: 0.6;
     user-select: none;
     pointer-events: none;
 

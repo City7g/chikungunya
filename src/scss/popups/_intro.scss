@@ -17,7 +17,7 @@
   transition: 0.6s all ease;
 
   @media (max-width: $main) {
-    display: block;
+    display: flex;
   }
 
   &__bg {
@@ -99,10 +99,18 @@
 
     pointer-events: none;
 
+    @media (max-width: $main) {
+      width: 140px;
+    }
+
     &--two {
       width: 12vw;
       top: 80%;
       left: 10%;
+
+      @media (max-width: $main) {
+        width: 85px;
+      }
     }
 
     &--three {
@@ -110,6 +118,10 @@
       top: 70%;
       left: 65%;
       opacity: 0.63;
+
+      @media (max-width: $main) {
+        width: 100px;
+      }
     }
   }
 }

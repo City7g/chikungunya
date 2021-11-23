@@ -71,7 +71,7 @@
     position: relative;
 
     // width: 100%;
-    max-width: 520px;
+    max-width: 560px;
     padding: 140px 30px 30px;
 
     background-color: #F1F0EE;
@@ -382,6 +382,9 @@
 
     @media (max-width: $main) {
       padding: 70px 0 50px;
+
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     @media (min-width: $main2) {
@@ -398,6 +401,10 @@
 
     @media (min-width: $main2) and (max-height: 900px) {
       width: 1800px;
+    }
+
+    @media (min-width: $main) and (max-height: 780px) {
+      width: 2200px;
     }
 
     & h2 {

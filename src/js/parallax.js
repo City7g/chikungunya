@@ -1,5 +1,5 @@
 const parallax = () => {
-  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent) && window.innerWidth >= 992) {
+  if (window.innerWidth >= 1200) {
     document.querySelectorAll('.map').forEach(item => {
       item.addEventListener('mousemove', (e) => {
         const transformX = -e.clientX + item.clientWidth / 2

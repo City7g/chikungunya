@@ -3,11 +3,11 @@
 header.navigation
   .container
     nav.navigation-links
-      .navigation-links__item.active(data-section=values[0].id)
-        span.navigation-links__number 1
-        p.navigation-links__text= values[0].name
-      - for (var x = 1; x < values.length; x++)
-        .navigation-links__item(data-section=values[x].id)
+      //- a(href="").navigation-links__item.active(data-section=values[0].id)
+      //-   span.navigation-links__number 1
+      //-   p.navigation-links__text= values[0].name
+      - for (var x = 0; x < values.length; x++)
+        a(href="#"+values[x].id).navigation-links__item
           span.navigation-links__number= x + 1
           p.navigation-links__text= values[x].name
     

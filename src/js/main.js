@@ -25,7 +25,7 @@ document.querySelectorAll('*[href="#"]').forEach(item => item.addEventListener('
 
 document.querySelectorAll('.questions__item li').forEach(item => {
   item.addEventListener('click', () => {
-    if(window.innerWidth >= 992) {
+    if(window.innerWidth >= 1200) {
       item.closest('.questions__wrap').querySelectorAll('.questions__item p').forEach(i => {i.style.height = 0 + 'px'})
     } else {
       item.closest('.questions__item').querySelectorAll('.questions__item p').forEach(i => {i.style.height = 0 + 'px'})
@@ -37,10 +37,12 @@ document.querySelectorAll('.questions__item li').forEach(item => {
 })
 
 window.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.questions__item p').style.height = document.querySelector('.questions__item p').scrollHeight + 'px'
+  if(document.querySelector('.questions__item p')) {
+    document.querySelector('.questions__item p').style.height = document.querySelector('.questions__item p').scrollHeight + 'px'
+  }
 })
 
-document.querySelectorAll('.main-form__input input').forEach(item => {
+document.querySelectorAll('.main-form__input input,.main-form__textarea textarea').forEach(item => {
   item.addEventListener('focus', () => {
     item.nextElementSibling.style.display = 'block'
   })

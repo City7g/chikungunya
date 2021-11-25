@@ -4,9 +4,10 @@ import { card } from './card'
 import { hamburger } from './hamburger'
 import { navigator } from './navigator'
 import { parallax } from './parallax'
-import { scroll, scrollX } from './scroll'
-import { popup } from './popup'
+import { scroll } from './scroll'
+import { popup, showPopup } from './popup'
 import { cursor } from './cursor'
+import { form } from './form'
 import { test } from './test'
 
 preloader()
@@ -14,41 +15,45 @@ card()
 hamburger()
 navigator()
 // parallax()
-scroll()
+if (window.location.pathname === '/') {
+  scroll()
+}
 popup()
 cursor()
+form()
 // test()
-
-window.scroll(0, 0)
 
 document.querySelectorAll('*[href="#"]').forEach(item => item.addEventListener('click', e => e.preventDefault()))
 
 document.querySelectorAll('.questions__item li').forEach(item => {
   item.addEventListener('click', () => {
-    if(window.innerWidth >= 1200) {
-      item.closest('.questions__wrap').querySelectorAll('.questions__item p').forEach(i => {i.style.height = 0 + 'px'})
+    if (window.innerWidth >= 1200) {
+      item.closest('.questions__wrap').querySelectorAll('.questions__item p').forEach(i => { i.style.height = 0 + 'px' })
     } else {
-      item.closest('.questions__item').querySelectorAll('.questions__item p').forEach(i => {i.style.height = 0 + 'px'})
+      item.closest('.questions__item').querySelectorAll('.questions__item p').forEach(i => { i.style.height = 0 + 'px' })
     }
-    item.querySelectorAll('p').forEach(i => {
-      i.style.height = i.scrollHeight + 'px'
-    })
+    if(window.innerWidth >= 1200 && window.innerHeight < 900) {
+      showPopup('.popup-question')
+      document.querySelector('.popup-question__title').textContent = item.querySelector('h5').textContent
+      document.querySelector('.popup-question__text').textContent = item.querySelector('p').textContent
+    } else {
+      if(item.querySelector('p').clientHeight > 60) {
+        item.querySelectorAll('p').forEach(i => {
+          i.style.height = ''
+        })
+      } else {
+        item.querySelectorAll('p').forEach(i => {
+          i.style.height = i.scrollHeight + 'px'
+        })
+      }
+    }
   })
 })
 
 window.addEventListener('DOMContentLoaded', () => {
-  if(document.querySelector('.questions__item p')) {
+  if (document.querySelector('.questions__item p') && !(window.innerWidth >= 1200 && window.innerHeight < 900)) {
     document.querySelector('.questions__item p').style.height = document.querySelector('.questions__item p').scrollHeight + 'px'
   }
-})
-
-document.querySelectorAll('.main-form__input input,.main-form__textarea textarea').forEach(item => {
-  item.addEventListener('focus', () => {
-    item.nextElementSibling.style.display = 'block'
-  })
-  item.addEventListener('blur', () => {
-    item.nextElementSibling.style.display = ''
-  })
 })
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -57,13 +62,20 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-// const block = document.createElement('div')
-// block.style.position = 'fixed'
-// block.style.bottom = '40px'
-// block.style.left = '20px'
-// block.textContent = window.innerHeight
-// document.body.append(block)
 
-// window.addEventListener('resize', () => {
-//   block.textContent = window.innerHeight
-// })
+// Privacy header
+if (window.location.pathname === '/privacy.html') {
+  const privacyHeader = () => {
+    if (window.innerWidth >= 1200) {
+      document.querySelector('.privacy-header').style.display = 'block'
+      document.querySelector('.navigation').style.display = 'none'
+    } else {
+      document.querySelector('.privacy-header').style.display = 'none'
+      document.querySelector('.navigation').style.display = 'block'
+    }
+  }
+
+  privacyHeader()
+
+  window.addEventListener('resize', privacyHeader)
+}

@@ -30,6 +30,7 @@
     object-position: center;
     pointer-events: none;
     user-select: none;
+    // opacity: 0.6;
   }
 
   &__wrap {
@@ -79,6 +80,7 @@
 
   &__image {
     position: relative;
+    z-index: 1;
 
     max-width: 600px;
 
@@ -92,6 +94,7 @@
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
+    z-index: 0;
 
     width: 17vw;
 

@@ -4,7 +4,7 @@
 @include font-face('OpenSans', 'OpenSans-Medium', 500);
 @include font-face('OpenSans', 'OpenSans-Bold', 700);
 
-@include font-face('Montserrat', 'Montserrat-Regular');
+// @include font-face('Montserrat', 'Montserrat-Regular');
 @include font-face('Montserrat', 'Montserrat-Medium', 500);
 @include font-face('Montserrat', 'Montserrat-Medium', 600);
 @include font-face('Montserrat', 'Montserrat-Bold', 700);
@@ -96,6 +96,7 @@
   font-weight: 700;
   text-transform: uppercase;
 
+  color: #575757;
   border-radius: 48px;
   border: 2px solid $secondary;
   transition: 0.3s all ease;

@@ -1,5 +1,10 @@
 const showPopup = (popupName) => {
+  const widthScroll = window.innerWidth - document.body.scrollWidth
   document.body.style.overflow = 'hidden'
+
+  if (widthScroll > 0) {
+    document.body.style.marginRight = widthScroll + 'px'
+  }
 
   document.querySelector(popupName).classList.add('show')
   setTimeout(() => {
@@ -13,22 +18,15 @@ const closePopup = (popupName, isFirstPopup = true) => {
   setTimeout(() => {
     popupName.classList.remove('show')
 
-    document.body.style.overflow = isFirstPopup ? 'auto' : 'hidden'
+    document.body.style.overflow = isFirstPopup ? '' : 'hidden'
+
+    if (isFirstPopup) {
+      document.body.style.marginRight = ''
+    }
   }, 300);
 }
 
 const popup = () => {
-  if (document.querySelector('form')) {
-    document.querySelectorAll('form').forEach(item => {
-      item.addEventListener('submit', e => {
-        e.preventDefault()
-
-        closePopup(document.querySelector('.popup-form'), false)
-        showPopup('.popup-thank')
-      })
-    })
-  }
-
   document.querySelectorAll('a[href="#"]').forEach(item => {
     item.addEventListener('click', e => {
       e.preventDefault()
@@ -42,18 +40,32 @@ const popup = () => {
       item.addEventListener('click', (e) => {
         if (e.target.classList.contains('popup__close') || e.target.classList.contains('popup') || e.target.classList.contains('popup__button')) {
           closePopup(item)
+
+          document.querySelectorAll('video').forEach(i => {
+            i.pause()
+          })
         }
       })
     })
   }
 
-  document.querySelector('button.section__share-button').addEventListener('click', () => {
-    showPopup('.popup-form')
-  })
+  if (document.querySelector('.open-video')) {
+    document.querySelectorAll('.open-video').forEach(item => {
+      item.addEventListener('click', () => {
+        showPopup('.popup-video')
+      })
+    })
+  }
+
+  if (document.querySelector('button.section__share-button')) {
+    document.querySelector('button.section__share-button').addEventListener('click', () => {
+      showPopup('.popup-form')
+    })
+  }
 
 
 
   // document.querySelector('#four .section__share-button').click()
 }
 
-export { showPopup, popup }
+export { showPopup, closePopup, popup }

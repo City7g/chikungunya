@@ -137,14 +137,17 @@ const customScroll = () => {
   window.requestAnimationFrame(customScroll)
 }
 
-let currentSectionInView;
+let currentSectionInView = 'one';
 
 const scroll = () => {
+  if (document.querySelector('a.navigation-links__item')) {
+    document.querySelector(`a.navigation-links__item[href="#${currentSectionInView}"]`).classList.add('active')
+  }
+
   // Custom horizontal scroll
   if (window.innerWidth >= 1200) {
     window.addEventListener('wheel', e => {
       e.preventDefault()
-
 
       let isPopupOpen = 0
 
@@ -204,8 +207,10 @@ const scroll = () => {
           currentSectionInView = item.getAttribute('id')
         }
       })
-
-      document.querySelector(`a.navigation-links__item[href="#${currentSectionInView}"]`).classList.add('active')
+      
+      if (document.querySelector('a.navigation-links__item')) {
+        document.querySelector(`a.navigation-links__item[href="#${currentSectionInView}"]`).classList.add('active')
+      }
 
 
     })
@@ -253,11 +258,11 @@ const scroll = () => {
 
 window.addEventListener('load', () => {
   setTimeout(() => {
-    scrollX = 0
-    currentScrollX = 0
+    // scrollX = 0
+    // currentScrollX = 0
 
-    window.scrollTo(currentScrollX, 0)
-  }, 5);
+    window.scroll(0, 0)
+  }, 400);
 })
 
 // window.addEventListener('scroll', () => {

@@ -5,9 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/Montserrat/Montserrat-Regular.woff2">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <div class="intro"><img class="intro__bg" src="img/map/map-1.png" alt="">
+      <div class="intro__wrap">
+        <h1 class="title-h1 intro__title">Chikungunya</h1>
+        <h2 class="intro__subtitle">A Debilitating Disease From The Bite Of A Mosquito</h2>
+        <p class="big-text--bold intro__bigtext">Over millennia, people have adapted their lives and culture to coexist with the mosquito. Besides their pesky bites, mosquitoes can leave behind debilitating and long-lasting illnesses, including malaria, Zika, yellow fever, dengue, and <b>chikungunya</b>.</p>
+        <p class="intro__text">Explore the mosquito’s impact on our lives and how to help protect yourself while traveling to areas of the world endemic for mosquito-borne illnesses, including chikungunya.</p>
+        <button class="main-button intro__button">Get Started</button>
+      </div><img class="intro__image" src="img/intro-image.png" alt=""><img class="intro__virus intro__virus--one" src="img/virus.png" alt="" data-cof="0.01"><img class="intro__virus intro__virus--two" src="img/virus.png" alt="" data-cof="0.02"><img class="intro__virus intro__virus--three" src="img/virus.png" alt="" data-cof="0.03">
+    </div>
+    <div class="preloader"><img class="preloader__mosquito" src="img/preloader-mosquito.png" alt=""><img class="preloader__circle" src="img/preloader-circle.png" alt=""><img class="preloader__virus preloader__virus--one" src="img/virus.png" alt="" data-cof="0.01"><img class="preloader__virus preloader__virus--two" src="img/virus.png" alt="" data-cof="0.02"><img class="preloader__virus preloader__virus--three" src="img/virus.png" alt="" data-cof="0.03"><img class="preloader__virus preloader__virus--four" src="img/virus.png" alt="" data-cof="0.03"><img class="preloader__virus preloader__virus--five" src="img/virus.png" alt="" data-cof="0.03"></div>
     <header class="navigation">
       <div class="container">
         <nav class="navigation-links"><a class="navigation-links__item" href="#one"><span class="navigation-links__number">1</span>
@@ -65,7 +76,8 @@
           <div class="section__block"><span class="section-number">2</span>
             <h2 class="title-h2 section__block-title">What Is Chikungunya?</h2>
             <p class="main-text section__block-text">Chikungunya is a viral disease that is spread by Aedes mosquitoes. Since it was first identified in Tanzania in 1952, it has spread to the tropical regions of the Americas, Africa, and Asia. Its name derives from the African Kimakonde language word “chikungunya”, which means “to become contorted”, and alludes to the painful appearance that those who contract it tend to take. Although deaths from chikungunya are rare, symptoms like severe joint pain and fatigue may be debilitating and last for years. </p>
-            <p class="main-text--bold section__block-text">All it takes is one bite from an infected mosquito to contract chikungunya</p><a class="main-button" href="#">Watch to Learn More</a>
+            <p class="main-text--bold section__block-text">All it takes is one bite from an infected mosquito to contract chikungunya</p>
+            <button class="main-button open-video">Watch to Learn More</button>
             <figure class="main-figure"><img src="img/content-image-1.png" alt="">
               <figcaption>See the sights, but stay protected. Aedes mosquitoes bite primarily during the day.</figcaption>
             </figure>
@@ -145,7 +157,7 @@
               <li>Use mosquito netting when sleeping  outdoors or in rooms exposed to the outdoors.</li>
               <li>Choose accommodations that have screens on all doors and windows.</li>
             </ul>
-            <p class="main-text--bold section__block-text">See Where Outbreaks are Most Common</p><a class="main-button" href="/CHIKUNGUNYA-Countries-V2.pdf" target="_blank">See Country List</a>
+            <p class="main-text--bold section__block-text">See Where Outbreaks are Most Common</p><a class="main-button" href="/downloads/CHIKUNGUNYA-Countries-V2.pdf" target="_blank">See Country List</a>
             <figure class="main-figure"><img src="img/content-image-2.png" alt="">
               <figcaption>Protecting yourself from mosquitoes will help protect you from contracting chikungunya.</figcaption>
             </figure>
@@ -240,7 +252,7 @@
           </div>
           <div class="card card--left" style="top: 38%; left: 41%" data-cof="0.006">
             <h3 class="title-h5 card__title">Vietnam, 1300 - 1600s</h3><img class="card__img card__img--left-bottom" src="img/card/australia-2.png" alt="">
-            <p class="main-text card__description">A mosquito discovered in amber has been dated to ~100 million years ago, when dinosaurs still roamed the earth. Unlike most species, they’ve remained largely unchanged for millions of years. The perfect bloodsucker!</p>
+            <p class="main-text card__description">The jungles of northern Vietnam helped limit Chinese invasions during the Ming Dynasty. How? While the Chinese troops were prepared for enemy soldiers, they weren’t prepared for mosquitoes. So many Chinese troops were either incapacitated or killed by mosquito-borne illnesses that they were forced to withdraw.</p>
             <div class="card__plus"></div>
           </div>
           <div class="card" style="top: 62%; left: 75%" data-cof="0.008">
@@ -348,7 +360,7 @@
           </div>
         </div>
       </section>
-      <section class="contact-us" id="six"><img class="contact-us__bg" src="img/map/map-2.png" alt="">
+      <section class="contact-us" id="six"><img class="contact-us__bg" src="img/map/map-5.png" alt="">
         <div class="contact-us-info"><span class="section-number contact-us__number">6</span>
           <h2 class="title-h2 contact-us__title">Contact Us</h2>
           <h3 class="title-h3 contact-us__subtitle">Our Story</h3>
@@ -359,18 +371,18 @@
             <h4 class="title-h3 section-form__title">Stay Connected</h4>
             <p class="main-text section-form__text">Emergent BioSolutions Inc.<br>400 Professional Drive, Suite 400<br>Gaithersburg, MD 20879<br>240-631-3200</p><a href="#">hello@chikungunya.com </a>
           </div>
-          <form class="main-form">
+          <form class="main-form" novalidate>
             <label class="main-form__input">
               <h4>First Name</h4>
-              <input type="text" placeholder="First Name"><span class="main-form__error"> Please enter valid first name.</span>
+              <input type="text" placeholder="First Name" required="required"><span class="main-form__error"> Please enter valid first name.</span>
             </label>
             <label class="main-form__input">
               <h4>Last Name</h4>
-              <input type="text" placeholder="Last Name"><span class="main-form__error"> Please enter valid last name.</span>
+              <input type="text" placeholder="Last Name" required="required"><span class="main-form__error"> Please enter valid last name.</span>
             </label>
             <label class="main-form__input">
               <h4>E-mail</h4>
-              <input type="text" placeholder="E-mail"><span class="main-form__error">Please enter valid e-mail address.</span>
+              <input type="email" placeholder="E-mail" required="required"><span class="main-form__error">Please enter valid e-mail address.</span>
             </label>
             <label class="main-form__checkbox">
               <input type="checkbox" name="first"><span></span><span>I would like to receive information about travel health from Emergent Travel Health Inc. I understand that I can opt out at any time by clicking the Unsubscribe link in any email.</span>
@@ -379,7 +391,7 @@
               <input type="checkbox" name="two"><span></span><span>I confirm that I am a US resident, and understand the content has been created for US residents only. </span>
             </label>
             <label class="main-form__checkbox">
-              <input type="checkbox" name="three"><span></span><span>I have read and agree to the <a href="#">Privacy Policy</a>.</span>
+              <input type="checkbox" name="three"><span></span><span>I have read and agree to the <a href="/privacy">Privacy Policy</a>.</span>
             </label>
             <button class="main-button main-form__button" type="submit">Submit</button>
           </form>
@@ -454,7 +466,7 @@
     </div>
     <div class="popup popup-form">
       <div class="popup__wrap popup-form__wrap">
-        <h3 class="title-h3 popup-form__title">Share Yout Story</h3>
+        <h3 class="title-h3 popup-form__title">Share Your Story</h3>
         <form class="main-form popup-form__form">
           <label class="main-form__input">
             <h4>First Name</h4>
@@ -470,16 +482,17 @@
           </label>
           <label class="main-form__textarea">
             <h4>Your Story</h4>
-            <textarea type="text" placeholder="Enter your story here"></textarea><span class="main-form__error">Please enter valid e-mail address.</span>
+            <textarea type="text" placeholder="Enter your story here"></textarea><span class="main-form__error">Please enter your story.</span>
           </label>
           <label class="main-form__checkbox">
             <input type="checkbox" name="two"><span></span><span>I confirm that I am a US resident, and understand the content has been created for US residents only. </span>
           </label>
           <label class="main-form__checkbox">
-            <input type="checkbox" name="three"><span></span><span>I have read and agree to the <a href="#">Privacy Policy</a>.</span>
+            <input type="checkbox" name="three"><span></span><span>I have read and agree to the <a href="/privacy">Privacy Policy</a>.</span>
           </label>
           <button class="main-button main-form__button" type="submit">Submit</button>
         </form>
+        <div class="popup__close popup-form__close"></div>
       </div>
     </div>
     <div class="popup popup-thank">
@@ -489,9 +502,20 @@
         <button class="main-button popup-thank__button popup__button">Close</button>
       </div>
     </div>
+    <div class="popup popup-video">
+      <video src="/downloads/video.mp4" controls></video>
+      <div class="popup__close popup-video__close"></div>
+    </div>
+    <div class="popup popup-question">
+      <div class="popup__wrap popup-question__wrap">
+        <h3 class="title-h3 popup-question__title"></h3>
+        <p class="main-text popup-question__text"></p>
+        <div class="popup__close popup-card__close"></div>
+      </div>
+    </div>
     <footer class="footer">
       <div class="container">
-        <div class="footer-links"><a class="footer-links__link" href="/">Privacy Policy</a><a class="footer-links__link" href="#six">Contact Us</a><a class="footer-links__link" href="#seven">Reference</a></div>
+        <div class="footer-links"><a class="footer-links__link" href="/privacy.html">Privacy Policy</a><a class="footer-links__link" href="#six">Contact Us</a><a class="footer-links__link" href="#seven">References</a></div>
         <div class="footer__copy">© 2021 Emergent BioSolutions, Inc. All right reserved. PP-TH-US-00085 | November 2021</div>
       </div>
     </footer>

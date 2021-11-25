@@ -1,0 +1,12 @@
+.popup-question {
+  &__wrap {
+    max-width: 450px;
+    padding: 25px 35px 25px 30px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+
+    max-width: calc(100% - 20px);
+  }
+}

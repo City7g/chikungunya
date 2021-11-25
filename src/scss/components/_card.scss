@@ -153,10 +153,6 @@
       border-radius: 50%;
       cursor: pointer;
 
-      &:hover {
-        transform: rotate(180deg);
-      }
-
       &::after,
       &::before {
         position: absolute;
@@ -193,6 +189,10 @@
       transform: rotate(45deg);
       transition: 0.3s all ease;
     }
+  }
+
+  &:hover &__plus {
+    transform: rotate(180deg);
   }
 
   @media (max-width: $main) {

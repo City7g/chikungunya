@@ -37,6 +37,7 @@ const preloader = () => {
 const animVirus = item => {
   let virusTop = window.getComputedStyle(item).getPropertyValue('top')
   let virusLeft = window.getComputedStyle(item).getPropertyValue('left')
+  // console.log(item)
   virusTop = +virusTop.substr(0, virusTop.length - 2);
   virusLeft = +virusLeft.substr(0, virusLeft.length - 2);
   const cof = window.innerWidth > 991 ? 100 : 30

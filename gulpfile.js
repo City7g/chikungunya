@@ -18,7 +18,7 @@ function browserSync() {
 }
 
 function styles() {
-  return src('./src/scss/main.scss')
+  return src('./src/scss/*.scss')
     .pipe(sass())
     .pipe(dest('./dist'))
     .pipe(browsersync.stream())

@@ -1,5 +1,6 @@
 @import 'base/_mixins';
 @import 'base/_variables';
+@import 'base/_reset';
 @import 'base/_main';
 @import 'base/_container';
 @import 'base/_input';
@@ -15,7 +16,6 @@
 @import 'sections/_section';
 @import 'sections/_contact-us';
 @import 'sections/_map';
-@import 'sections/_privacy';
 
 @import 'popups/_main';
 @import 'popups/_intro';
@@ -23,3 +23,5 @@
 @import 'popups/_thank-you';
 @import 'popups/_card';
 @import 'popups/_form';
+@import 'popups/_video';
+@import 'popups/_question';

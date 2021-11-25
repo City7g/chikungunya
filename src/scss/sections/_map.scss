@@ -60,9 +60,9 @@
     object-fit: cover;
     object-position: center;
     
-    opacity: 0.6;
     user-select: none;
     pointer-events: none;
+    // opacity: 0.6;
 
     @media (max-width: $main) {
       position: absolute;

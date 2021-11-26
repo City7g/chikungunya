@@ -37,7 +37,7 @@ document.querySelectorAll('.questions__item li').forEach(item => {
       document.querySelector('.popup-question__title').textContent = item.querySelector('h5').textContent
       document.querySelector('.popup-question__text').textContent = item.querySelector('p').textContent
     } else {
-      if(item.querySelector('p').clientHeight > 60) {
+      if(item.querySelector('p').clientHeight > 20) {
         item.querySelectorAll('p').forEach(i => {
           i.style.height = ''
         })

@@ -19,7 +19,7 @@
 
   @media (min-width: $main2) {
     &--references &__wrap {
-      width: 100vw;
+      min-width: 100vw;
     }
   }
 
@@ -153,7 +153,7 @@
 
         &::before {
           position: absolute;
-          left: 0;
+          left: 20px;
           top: 9px;
           width: 4px;
           height: 4px;
@@ -611,6 +611,10 @@
 
       & br {
         margin-bottom: 5px;
+      }
+
+      & a {
+        text-decoration: underline;
       }
     }
   }

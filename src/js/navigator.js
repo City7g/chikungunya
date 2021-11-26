@@ -6,7 +6,9 @@ const navigator = () => {
       e.preventDefault()
 
       if (document.querySelector(`#${item.hash.substring(1)}`)) {
-        const sectionIsBig = document.querySelector(`#${item.hash.substring(1)}`).scrollWidth > window.innerWidth
+        // const sectionIsBig = document.querySelector(`#${item.hash.substring(1)} .section__wrap`).scrollWidth > window.innerWidth
+
+        // console.log(sectionIsBig)
 
         document.querySelector(`#${item.hash.substring(1)}`).scrollIntoView({ inline: 'center', behavior: 'smooth' });
         const currentScrollX = document.querySelector(`#${item.hash.substring(1)}`).offsetLeft + document.querySelector(`#${item.hash.substring(1)}`).clientWidth / 2 - window.innerWidth / 2

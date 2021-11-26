@@ -45,7 +45,16 @@
     pointer-events: none;
 
     @media (max-width: $main) {
+      height: calc(100% + 121px);
       opacity: 0.7;
+
+      object-position: 37% -121px;
+    }
+
+    @media (min-width: $main2) and (max-height: 900px) {
+      height: 900px;
+
+      object-position: center top;
     }
   }
 
@@ -59,5 +68,75 @@
 
   &__subtitle {
     margin-bottom: 12px;
+  }
+}
+
+.map-mark {
+  position: absolute;
+  top: 150px;
+  left: 16%;
+
+  max-width: min-content;
+  padding: 12px 25px 12px 18px;
+
+  background-color: $white;
+  border-radius: 8px;
+
+  @media (max-width: $main) {
+    top: 50px;
+    left: 15px;
+
+    padding: 12px 20px 12px 15px;
+  }
+
+  @media (min-width: $main2) and (max-height: 900px) {
+    top: 130px;
+    left: 50%;
+
+    transform: translateX(-420px);
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+
+    display: block;
+
+    border: 10px solid transparent;
+    border-left: 12px solid $white;
+    content: '';
+
+    // @media (max-width: $main) {
+    //   left: 0;
+    //   transform: translate(-100%, -50%);
+
+    //   border-right: 12px solid $white;
+    //   border-left: none;
+    // }
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 17px;
+    color: $primary;
+    text-transform: uppercase;
+
+    // @media (max-width: $mobile) {
+    //   font-size: 10px;
+    //   line-height: 15px;
+    // }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(calc(100% + 7px), -100%);
+
+    @media (max-width: $main) {
+      width: 30px;
+    }
   }
 }

@@ -186,22 +186,24 @@
 
     animation: scroll-anim 3s ease infinite;
 
-    &::after {
+    & span {
       position: absolute;
       top: 50%;
       left: 50%;
+      
+      display: block;
       width: 2px;
-      height: 18px;
+      height: 20px;
       transform: translate(-50%, -50%);
 
       background-color: $white;
       border-radius: 2px;
-      content: '';
     }
 
+    &::after,
     &::before {
       position: absolute;
-      top: calc(50% + 3px);
+      top: calc(50% + 5px);
       left: 50%;
       width: 8px;
       height: 8px;
@@ -211,6 +213,12 @@
       border-width: 0 2px 2px 0;
       border-radius: 2px;
       content: '';
+    }
+
+    &::before {
+      top: auto;
+      bottom: calc(50% + 5px);
+      transform: translate(-50%, 50%) rotate(-135deg);
     }
   }
 }

@@ -20,26 +20,26 @@ section.contact-us#six
     form.main-form(action="mail.php" method="post")
       label.main-form__input
         h4 First Name
-        input(type="text" placeholder="First Name" required="required" name="first" value="asd")
+        input(type="text", placeholder="First Name", name="first")
         span.main-form__error  Please enter valid first name.
       label.main-form__input
         h4 Last Name
-        input(type="text" placeholder="Last Name" required="required" name="last" value="asd")
+        input(type="text", placeholder="Last Name", name="last")
         span.main-form__error  Please enter valid last name.
       label.main-form__input
         h4 E-mail
-        input(type="email" placeholder="E-mail" required="required" name="email" value="asd@asd.we")
+        input(type="email", placeholder="E-mail", name="email")
         span.main-form__error Please enter valid e-mail address.
       label.main-form__checkbox
-        input(type="checkbox" name="fff" checked)
+        input(type="checkbox")
         span
         span I would like to receive information about travel health from Emergent Travel Health Inc. I understand that I can opt out at any time by clicking the Unsubscribe link in any email.
       label.main-form__checkbox
-        input(type="checkbox" name="two" checked)
+        input(type="checkbox")
         span
         span I confirm that I am a US resident, and understand the content has been created for US residents only. 
       label.main-form__checkbox
-        input(type="checkbox" name="three" checked)
+        input(type="checkbox")
         span
-        span I have read and agree to the <a href="/privacy"  target="_blank">Privacy Policy</a>.
+        span I have read and agree to the <a href="privacy.html"  target="_blank">Privacy Policy</a>.
       button(type="submit").main-button.main-form__button Submit

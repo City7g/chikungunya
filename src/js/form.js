@@ -64,45 +64,45 @@ const form = () => {
     document.querySelectorAll('form').forEach(item => {
       item.setAttribute('novalidate', true)
 
-      item.addEventListener('submit', async function(e) {
+      item.addEventListener('submit', async function (e) {
         e.preventDefault()
 
         const isValidForm = validationForm(item)
 
         if (isValidForm) {
-          const data = {
-            firstName: item.querySelector('input[name="first"]').value,
-            lastName: item.querySelector('input[name="last"]').value,
-            email: item.querySelector('input[name="email"]').value
-          }
-
           let formData = new FormData(item)
-          formData = Object.fromEntries(formData);
+          formData = Object.fromEntries(formData)
 
-          console.log(e)
-          console.log(this)
-          console.log(formData)
-
-          console.log(data)
-
-          const response = await fetch('/mail.php', {
+          const response = await fetch('mail.php', {
             method: 'POST',
-            body: formData,
+            body: JSON.stringify(formData),
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'X-Requested-With': 'xmlhttprequest'
             },
           })
 
-          if (!response.ok) {
-            throw new Error(`Ошибка по адресу ${response.url}, статус ошибки ${response.status}`)
-          }
+          // if (!response.ok) {
+          //   throw new Error(`Ошибка по адресу ${response.url}, статус ошибки ${response.status}`)
+          // }
 
           if (document.querySelector('.popup-form') && document.querySelector('.popup-form').contains(item)) {
             closePopup(document.querySelector('.popup-form'), false)
           }
-          
-          const asd = await response.text()
-          console.log(asd)
+
+          let responseText = await response.text()
+          // responseText = await JSON.parse(responseText)
+          console.log(responseText)
+
+          console.log(response)
+
+          if (response.ok) {
+            document.querySelector('.popup-thank__title').textContent = 'Thank You'
+            document.querySelector('.popup-thank__text').textContent = 'Your form has been submitted.'
+          } else {
+            document.querySelector('.popup-thank__title').textContent = 'Error'
+            document.querySelector('.popup-thank__text').textContent = responseText ? responseText : 'Server error!'
+          }
 
           showPopup('.popup-thank')
           resetForm(item)

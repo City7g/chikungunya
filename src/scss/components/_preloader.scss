@@ -34,6 +34,8 @@
     mix-blend-mode: multiply;
     pointer-events: none;
 
+    animation: preloader-virus-one 100s linear infinite;
+
     &--one {
       width: 18vw;
       top: 0;
@@ -51,6 +53,8 @@
       left: 150px;
       opacity: 0.6;
 
+      animation-name: preloader-virus-two;
+
       @media (max-width: $main) {
         width: 120px;
       }
@@ -61,6 +65,8 @@
       top: 70%;
       left: 65%;
       opacity: 0.5;
+
+      animation-name: preloader-virus-three;
 
       @media (max-width: $main) {
         width: 100px;
@@ -73,6 +79,8 @@
       left: 80%;
       opacity: 0.8;
 
+      animation-name: preloader-virus-four;
+
       @media (max-width: $main) {
         width: 70px;
       }
@@ -83,6 +91,8 @@
       top: 40%;
       left: 80%;
       opacity: 0.7;
+
+      animation-name: preloader-virus-five;
 
       @media (max-width: $main) {
         width: 80px;
@@ -99,4 +109,23 @@
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+@keyframes preloader-virus-one {
+  @include virus-anim(0.1, 0.1, 0.1);
+}
+
+@keyframes preloader-virus-two {
+  @include virus-anim(0.8, 0.1, 0.1);
+}
+
+@keyframes preloader-virus-three {
+  @include virus-anim(0.8, 0.5, 0.1);
+}
+@keyframes preloader-virus-four {
+  @include virus-anim(0.2, 0.7, 0.1);
+}
+
+@keyframes preloader-virus-five {
+  @include virus-anim(0.8, 0.8, 0.1);
 }

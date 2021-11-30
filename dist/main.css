@@ -171,12 +171,6 @@ textarea {
 }
 @font-face {
   font-family: "OpenSans";
-  src: url("/fonts/OpenSans/OpenSans-Medium.woff2") format("woff2"), url("OpenSans/OpenSans-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "OpenSans";
   src: url("/fonts/OpenSans/OpenSans-Bold.woff2") format("woff2"), url("OpenSans/OpenSans-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -341,6 +335,7 @@ textarea {
   transform: translate(-50%, -50%);
   mix-blend-mode: multiply;
   pointer-events: none;
+  animation: preloader-virus-one 100s linear infinite;
 }
 .preloader__virus--one {
   width: 18vw;
@@ -358,6 +353,7 @@ textarea {
   top: 70%;
   left: 150px;
   opacity: 0.6;
+  animation-name: preloader-virus-two;
 }
 @media (max-width: 1199px) {
   .preloader__virus--two {
@@ -369,6 +365,7 @@ textarea {
   top: 70%;
   left: 65%;
   opacity: 0.5;
+  animation-name: preloader-virus-three;
 }
 @media (max-width: 1199px) {
   .preloader__virus--three {
@@ -380,6 +377,7 @@ textarea {
   top: 10%;
   left: 80%;
   opacity: 0.8;
+  animation-name: preloader-virus-four;
 }
 @media (max-width: 1199px) {
   .preloader__virus--four {
@@ -391,6 +389,7 @@ textarea {
   top: 40%;
   left: 80%;
   opacity: 0.7;
+  animation-name: preloader-virus-five;
 }
 @media (max-width: 1199px) {
   .preloader__virus--five {
@@ -404,6 +403,516 @@ textarea {
   }
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes preloader-virus-one {
+  0% {
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 11.6728415573%;
+    left: 18.2976577692%;
+    transform: translate(-50%, -50%) scale(90.7010113185%);
+  }
+  10% {
+    top: 11.0224014468%;
+    left: 1.6470927029%;
+    transform: translate(-50%, -50%) scale(119.124052197%);
+  }
+  15% {
+    top: 9.0017621937%;
+    left: 16.0998259178%;
+    transform: translate(-50%, -50%) scale(103.4495797272%);
+  }
+  20% {
+    top: 11.3641734591%;
+    left: 18.4849070325%;
+    transform: translate(-50%, -50%) scale(74.4981534461%);
+  }
+  25% {
+    top: 18.0139472451%;
+    left: 10.8560287888%;
+    transform: translate(-50%, -50%) scale(85.9207071238%);
+  }
+  30% {
+    top: 15.9092569606%;
+    left: 5.8161467522%;
+    transform: translate(-50%, -50%) scale(83.4617189526%);
+  }
+  35% {
+    top: 1.1946594374%;
+    left: 2.6447822898%;
+    transform: translate(-50%, -50%) scale(89.4722830555%);
+  }
+  40% {
+    top: 8.6512425211%;
+    left: 10.0781196108%;
+    transform: translate(-50%, -50%) scale(99.2165058177%);
+  }
+  45% {
+    top: 15.2332645531%;
+    left: 12.8503778033%;
+    transform: translate(-50%, -50%) scale(77.8543039135%);
+  }
+  50% {
+    top: 0.8687724068%;
+    left: 8.2652765824%;
+    transform: translate(-50%, -50%) scale(95.6372694593%);
+  }
+  55% {
+    top: 4.5715552399%;
+    left: 5.8406188818%;
+    transform: translate(-50%, -50%) scale(104.0147295987%);
+  }
+  60% {
+    top: 2.2169966205%;
+    left: 16.0501962918%;
+    transform: translate(-50%, -50%) scale(128.210982046%);
+  }
+  65% {
+    top: 1.8674375722%;
+    left: 6.0973937368%;
+    transform: translate(-50%, -50%) scale(97.7994741343%);
+  }
+  70% {
+    top: 15.9032081356%;
+    left: 17.5371011851%;
+    transform: translate(-50%, -50%) scale(119.230494331%);
+  }
+  75% {
+    top: 12.9331912845%;
+    left: 10.6259632066%;
+    transform: translate(-50%, -50%) scale(85.8530027654%);
+  }
+  80% {
+    top: 12.4769433223%;
+    left: 10.2343115109%;
+    transform: translate(-50%, -50%) scale(113.6663531238%);
+  }
+  85% {
+    top: 1.5399293138%;
+    left: 19.2535409289%;
+    transform: translate(-50%, -50%) scale(93.4718001414%);
+  }
+  90% {
+    top: 6.8780321849%;
+    left: 9.9153143426%;
+    transform: translate(-50%, -50%) scale(97.1011137942%);
+  }
+  100% {
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes preloader-virus-two {
+  0% {
+    top: 10%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 12.6006857679%;
+    left: 70.4430790922%;
+    transform: translate(-50%, -50%) scale(85.5907933713%);
+  }
+  10% {
+    top: 19.5273750915%;
+    left: 82.1331504009%;
+    transform: translate(-50%, -50%) scale(113.1321515159%);
+  }
+  15% {
+    top: 7.99178903%;
+    left: 82.932246884%;
+    transform: translate(-50%, -50%) scale(106.9082572701%);
+  }
+  20% {
+    top: 18.6837955549%;
+    left: 71.9688258639%;
+    transform: translate(-50%, -50%) scale(127.1620942821%);
+  }
+  25% {
+    top: 4.0843292937%;
+    left: 88.5862068298%;
+    transform: translate(-50%, -50%) scale(102.1797798832%);
+  }
+  30% {
+    top: 16.9325369232%;
+    left: 82.349781542%;
+    transform: translate(-50%, -50%) scale(127.878856818%);
+  }
+  35% {
+    top: 1.0400614672%;
+    left: 80.7667099168%;
+    transform: translate(-50%, -50%) scale(115.2103514708%);
+  }
+  40% {
+    top: 19.3706291799%;
+    left: 73.5982611133%;
+    transform: translate(-50%, -50%) scale(75.0965819207%);
+  }
+  45% {
+    top: 18.3868117716%;
+    left: 85.1578718134%;
+    transform: translate(-50%, -50%) scale(83.7586670716%);
+  }
+  50% {
+    top: 18.5389163158%;
+    left: 87.440717302%;
+    transform: translate(-50%, -50%) scale(76.9932211839%);
+  }
+  55% {
+    top: 18.5933093641%;
+    left: 86.0629254365%;
+    transform: translate(-50%, -50%) scale(118.1397432742%);
+  }
+  60% {
+    top: 7.5683483493%;
+    left: 82.9471374305%;
+    transform: translate(-50%, -50%) scale(84.6500824738%);
+  }
+  65% {
+    top: 12.5488620586%;
+    left: 86.9916350336%;
+    transform: translate(-50%, -50%) scale(92.6700670665%);
+  }
+  70% {
+    top: 7.0514652461%;
+    left: 84.0807379666%;
+    transform: translate(-50%, -50%) scale(89.6847014927%);
+  }
+  75% {
+    top: 12.1493184219%;
+    left: 81.018398455%;
+    transform: translate(-50%, -50%) scale(89.619159249%);
+  }
+  80% {
+    top: 17.0152641038%;
+    left: 77.0720120108%;
+    transform: translate(-50%, -50%) scale(95.4419840052%);
+  }
+  85% {
+    top: 10.8466952748%;
+    left: 72.4042367247%;
+    transform: translate(-50%, -50%) scale(80.7390479489%);
+  }
+  90% {
+    top: 11.6221634283%;
+    left: 74.5066249439%;
+    transform: translate(-50%, -50%) scale(75.3368000964%);
+  }
+  100% {
+    top: 10%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes preloader-virus-three {
+  0% {
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 45.5392108257%;
+    left: 77.8593163633%;
+    transform: translate(-50%, -50%) scale(105.2080109421%);
+  }
+  10% {
+    top: 46.7138115252%;
+    left: 85.2270293347%;
+    transform: translate(-50%, -50%) scale(97.3327604939%);
+  }
+  15% {
+    top: 54.229500297%;
+    left: 75.6492651528%;
+    transform: translate(-50%, -50%) scale(88.9907170669%);
+  }
+  20% {
+    top: 53.6102621956%;
+    left: 80.7201301123%;
+    transform: translate(-50%, -50%) scale(116.9258399088%);
+  }
+  25% {
+    top: 54.3850826577%;
+    left: 70.1737080718%;
+    transform: translate(-50%, -50%) scale(123.1748176638%);
+  }
+  30% {
+    top: 53.7369592399%;
+    left: 81.6523285962%;
+    transform: translate(-50%, -50%) scale(77.2392330709%);
+  }
+  35% {
+    top: 48.6839506485%;
+    left: 73.4169443927%;
+    transform: translate(-50%, -50%) scale(119.9123089136%);
+  }
+  40% {
+    top: 49.0584148162%;
+    left: 89.3900021837%;
+    transform: translate(-50%, -50%) scale(78.349306519%);
+  }
+  45% {
+    top: 45.54295448%;
+    left: 87.3396246938%;
+    transform: translate(-50%, -50%) scale(71.8657775863%);
+  }
+  50% {
+    top: 45.841652311%;
+    left: 86.940561737%;
+    transform: translate(-50%, -50%) scale(72.8051872343%);
+  }
+  55% {
+    top: 46.102940116%;
+    left: 82.4980422307%;
+    transform: translate(-50%, -50%) scale(75.8324226277%);
+  }
+  60% {
+    top: 46.7535086108%;
+    left: 87.34091896%;
+    transform: translate(-50%, -50%) scale(107.2084981187%);
+  }
+  65% {
+    top: 44.9585473194%;
+    left: 82.5197005456%;
+    transform: translate(-50%, -50%) scale(76.7249454056%);
+  }
+  70% {
+    top: 54.2300869043%;
+    left: 85.4424200881%;
+    transform: translate(-50%, -50%) scale(77.398501079%);
+  }
+  75% {
+    top: 47.9246395765%;
+    left: 81.4012763935%;
+    transform: translate(-50%, -50%) scale(100.0635251246%);
+  }
+  80% {
+    top: 41.9589234211%;
+    left: 89.426914174%;
+    transform: translate(-50%, -50%) scale(104.1295178278%);
+  }
+  85% {
+    top: 44.6086891348%;
+    left: 74.2071142674%;
+    transform: translate(-50%, -50%) scale(81.804811288%);
+  }
+  90% {
+    top: 40.4793214951%;
+    left: 87.5171228151%;
+    transform: translate(-50%, -50%) scale(97.202796248%);
+  }
+  100% {
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes preloader-virus-four {
+  0% {
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 61.5457332868%;
+    left: 11.4593636009%;
+    transform: translate(-50%, -50%) scale(83.4240286496%);
+  }
+  10% {
+    top: 62.8370315602%;
+    left: 25.1139804385%;
+    transform: translate(-50%, -50%) scale(87.6314807904%);
+  }
+  15% {
+    top: 72.8378753188%;
+    left: 27.0837860347%;
+    transform: translate(-50%, -50%) scale(117.3673727988%);
+  }
+  20% {
+    top: 65.4360993684%;
+    left: 26.3521560911%;
+    transform: translate(-50%, -50%) scale(77.7908137599%);
+  }
+  25% {
+    top: 67.9378642692%;
+    left: 17.2264625956%;
+    transform: translate(-50%, -50%) scale(101.5339428027%);
+  }
+  30% {
+    top: 70.6286438089%;
+    left: 18.4920749273%;
+    transform: translate(-50%, -50%) scale(77.139825676%);
+  }
+  35% {
+    top: 69.6507717042%;
+    left: 17.6367688569%;
+    transform: translate(-50%, -50%) scale(109.1756206019%);
+  }
+  40% {
+    top: 77.9843667227%;
+    left: 16.8745686758%;
+    transform: translate(-50%, -50%) scale(104.8952399152%);
+  }
+  45% {
+    top: 71.1248309675%;
+    left: 22.4645698541%;
+    transform: translate(-50%, -50%) scale(82.49994619%);
+  }
+  50% {
+    top: 63.6720264505%;
+    left: 24.4388118621%;
+    transform: translate(-50%, -50%) scale(115.7633590484%);
+  }
+  55% {
+    top: 65.7274918526%;
+    left: 19.0875387039%;
+    transform: translate(-50%, -50%) scale(96.9546292194%);
+  }
+  60% {
+    top: 66.2010485683%;
+    left: 16.8960580612%;
+    transform: translate(-50%, -50%) scale(117.4280562236%);
+  }
+  65% {
+    top: 64.934131328%;
+    left: 17.2669664811%;
+    transform: translate(-50%, -50%) scale(116.1662863614%);
+  }
+  70% {
+    top: 66.863555444%;
+    left: 29.625209347%;
+    transform: translate(-50%, -50%) scale(111.1371184353%);
+  }
+  75% {
+    top: 76.3743746758%;
+    left: 26.2138240189%;
+    transform: translate(-50%, -50%) scale(77.5174468212%);
+  }
+  80% {
+    top: 62.2769378381%;
+    left: 11.182945241%;
+    transform: translate(-50%, -50%) scale(92.0133279243%);
+  }
+  85% {
+    top: 78.8690486858%;
+    left: 24.9317886242%;
+    transform: translate(-50%, -50%) scale(100.660837641%);
+  }
+  90% {
+    top: 71.0184852869%;
+    left: 17.6444421523%;
+    transform: translate(-50%, -50%) scale(109.325413418%);
+  }
+  100% {
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes preloader-virus-five {
+  0% {
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 74.1816567219%;
+    left: 72.1322024709%;
+    transform: translate(-50%, -50%) scale(93.3360932031%);
+  }
+  10% {
+    top: 87.0795837256%;
+    left: 72.7511396466%;
+    transform: translate(-50%, -50%) scale(108.5352566212%);
+  }
+  15% {
+    top: 86.7085011537%;
+    left: 85.7425897588%;
+    transform: translate(-50%, -50%) scale(95.2405486237%);
+  }
+  20% {
+    top: 82.2514277592%;
+    left: 81.4090833572%;
+    transform: translate(-50%, -50%) scale(76.3506132481%);
+  }
+  25% {
+    top: 88.7257353459%;
+    left: 79.3964191789%;
+    transform: translate(-50%, -50%) scale(122.2340341984%);
+  }
+  30% {
+    top: 84.8817398483%;
+    left: 82.7987903677%;
+    transform: translate(-50%, -50%) scale(75.4096725602%);
+  }
+  35% {
+    top: 72.3685995731%;
+    left: 79.0568434695%;
+    transform: translate(-50%, -50%) scale(83.5725807864%);
+  }
+  40% {
+    top: 83.6272141748%;
+    left: 73.3545726301%;
+    transform: translate(-50%, -50%) scale(113.0375971805%);
+  }
+  45% {
+    top: 75.0974508788%;
+    left: 88.9180970632%;
+    transform: translate(-50%, -50%) scale(129.681076791%);
+  }
+  50% {
+    top: 89.4688247676%;
+    left: 76.4521487525%;
+    transform: translate(-50%, -50%) scale(128.62681855%);
+  }
+  55% {
+    top: 82.8118444543%;
+    left: 87.2303450604%;
+    transform: translate(-50%, -50%) scale(106.8820897352%);
+  }
+  60% {
+    top: 75.8218885523%;
+    left: 76.2238540542%;
+    transform: translate(-50%, -50%) scale(77.9162369551%);
+  }
+  65% {
+    top: 81.7232846504%;
+    left: 70.8063190952%;
+    transform: translate(-50%, -50%) scale(78.8515738844%);
+  }
+  70% {
+    top: 82.4703900519%;
+    left: 73.2376112339%;
+    transform: translate(-50%, -50%) scale(72.5345354224%);
+  }
+  75% {
+    top: 78.1780989007%;
+    left: 71.3982926644%;
+    transform: translate(-50%, -50%) scale(95.4609662457%);
+  }
+  80% {
+    top: 70.6621991586%;
+    left: 80.4846808588%;
+    transform: translate(-50%, -50%) scale(85.0815377593%);
+  }
+  85% {
+    top: 70.4931467784%;
+    left: 82.7033517188%;
+    transform: translate(-50%, -50%) scale(110.6916144107%);
+  }
+  90% {
+    top: 81.0871708666%;
+    left: 85.144769863%;
+    transform: translate(-50%, -50%) scale(79.3520003885%);
+  }
+  100% {
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 .navigation {
@@ -1944,6 +2453,7 @@ textarea {
   width: 17vw;
   opacity: 0.5;
   pointer-events: none;
+  animation: intro-virus-one 100s linear infinite;
 }
 @media (max-width: 1199px) {
   .intro__virus {
@@ -1954,6 +2464,7 @@ textarea {
   width: 12vw;
   top: 80%;
   left: 10%;
+  animation-name: intro-virus-two;
 }
 @media (max-width: 1199px) {
   .intro__virus--two {
@@ -1965,6 +2476,7 @@ textarea {
   top: 70%;
   left: 65%;
   opacity: 0.63;
+  animation-name: intro-virus-three;
 }
 @media (max-width: 1199px) {
   .intro__virus--three {
@@ -1972,6 +2484,312 @@ textarea {
   }
 }
 
+@keyframes intro-virus-one {
+  0% {
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 17.9218137156%;
+    left: 6.7698961576%;
+    transform: translate(-50%, -50%) scale(86.5678331287%);
+  }
+  10% {
+    top: 24.7628919489%;
+    left: 5.3876227019%;
+    transform: translate(-50%, -50%) scale(109.0148213078%);
+  }
+  15% {
+    top: 19.0655853464%;
+    left: 10.6643995176%;
+    transform: translate(-50%, -50%) scale(71.6800068587%);
+  }
+  20% {
+    top: 23.8747709822%;
+    left: 8.5448810079%;
+    transform: translate(-50%, -50%) scale(123.5028544953%);
+  }
+  25% {
+    top: 13.0279152081%;
+    left: 19.8382073587%;
+    transform: translate(-50%, -50%) scale(123.940433777%);
+  }
+  30% {
+    top: 15.6152078145%;
+    left: 22.9028356524%;
+    transform: translate(-50%, -50%) scale(127.5325936701%);
+  }
+  35% {
+    top: 23.4414839406%;
+    left: 18.4678738293%;
+    transform: translate(-50%, -50%) scale(119.0697233715%);
+  }
+  40% {
+    top: 19.7899311822%;
+    left: 15.1281855787%;
+    transform: translate(-50%, -50%) scale(99.8937649478%);
+  }
+  45% {
+    top: 23.0418541352%;
+    left: 18.6309056647%;
+    transform: translate(-50%, -50%) scale(109.5252814944%);
+  }
+  50% {
+    top: 18.2761041745%;
+    left: 8.0180148027%;
+    transform: translate(-50%, -50%) scale(78.1595421662%);
+  }
+  55% {
+    top: 15.4470193553%;
+    left: 18.1085896551%;
+    transform: translate(-50%, -50%) scale(82.1929008085%);
+  }
+  60% {
+    top: 5.5914606561%;
+    left: 13.0332525565%;
+    transform: translate(-50%, -50%) scale(74.800477919%);
+  }
+  65% {
+    top: 13.9452385981%;
+    left: 14.8384096838%;
+    transform: translate(-50%, -50%) scale(107.7728105724%);
+  }
+  70% {
+    top: 13.286527906%;
+    left: 6.9238110227%;
+    transform: translate(-50%, -50%) scale(127.066325004%);
+  }
+  75% {
+    top: 6.18570064%;
+    left: 7.1429607945%;
+    transform: translate(-50%, -50%) scale(102.6147864333%);
+  }
+  80% {
+    top: 7.4001666527%;
+    left: 11.2858909917%;
+    transform: translate(-50%, -50%) scale(75.5208254958%);
+  }
+  85% {
+    top: 10.4117298382%;
+    left: 20.7137527681%;
+    transform: translate(-50%, -50%) scale(91.0719263617%);
+  }
+  90% {
+    top: 19.2278245728%;
+    left: 6.7260026362%;
+    transform: translate(-50%, -50%) scale(81.1081759474%);
+  }
+  100% {
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes intro-virus-two {
+  0% {
+    top: 80%;
+    left: 10%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 72.7115299905%;
+    left: 18.9539241725%;
+    transform: translate(-50%, -50%) scale(89.0513623145%);
+  }
+  10% {
+    top: 83.5533071932%;
+    left: 11.2216721807%;
+    transform: translate(-50%, -50%) scale(124.9281915422%);
+  }
+  15% {
+    top: 81.8530868206%;
+    left: 5.4133444343%;
+    transform: translate(-50%, -50%) scale(99.005770642%);
+  }
+  20% {
+    top: 71.7927149728%;
+    left: 8.1060267514%;
+    transform: translate(-50%, -50%) scale(78.6235475718%);
+  }
+  25% {
+    top: 70.833006591%;
+    left: 13.5332000568%;
+    transform: translate(-50%, -50%) scale(124.57781298%);
+  }
+  30% {
+    top: 89.2645685696%;
+    left: 4.2754701613%;
+    transform: translate(-50%, -50%) scale(99.0941195577%);
+  }
+  35% {
+    top: 89.6284096096%;
+    left: 9.4418501833%;
+    transform: translate(-50%, -50%) scale(88.1176910919%);
+  }
+  40% {
+    top: 89.4418640183%;
+    left: 18.591948379%;
+    transform: translate(-50%, -50%) scale(120.8023748699%);
+  }
+  45% {
+    top: 72.3475984783%;
+    left: 2.672862755%;
+    transform: translate(-50%, -50%) scale(73.7624037699%);
+  }
+  50% {
+    top: 87.8817435247%;
+    left: 7.9581822566%;
+    transform: translate(-50%, -50%) scale(100.534210302%);
+  }
+  55% {
+    top: 87.691602762%;
+    left: 7.5406146114%;
+    transform: translate(-50%, -50%) scale(76.3024801784%);
+  }
+  60% {
+    top: 70.3024732482%;
+    left: 1.8307949447%;
+    transform: translate(-50%, -50%) scale(112.722172522%);
+  }
+  65% {
+    top: 88.9293535373%;
+    left: 9.0950350502%;
+    transform: translate(-50%, -50%) scale(110.9925162265%);
+  }
+  70% {
+    top: 87.1892142905%;
+    left: 4.9399049379%;
+    transform: translate(-50%, -50%) scale(100.8594682974%);
+  }
+  75% {
+    top: 82.201180763%;
+    left: 14.4557873025%;
+    transform: translate(-50%, -50%) scale(86.8706253973%);
+  }
+  80% {
+    top: 84.4339758735%;
+    left: 17.1247581023%;
+    transform: translate(-50%, -50%) scale(125.1372017907%);
+  }
+  85% {
+    top: 77.7985389869%;
+    left: 8.8033627741%;
+    transform: translate(-50%, -50%) scale(102.0064755142%);
+  }
+  90% {
+    top: 79.9226034352%;
+    left: 4.9944705551%;
+    transform: translate(-50%, -50%) scale(83.7639056054%);
+  }
+  100% {
+    top: 80%;
+    left: 10%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes intro-virus-three {
+  0% {
+    top: 70%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  5% {
+    top: 79.3761194116%;
+    left: 86.1250285734%;
+    transform: translate(-50%, -50%) scale(125.9315598968%);
+  }
+  10% {
+    top: 60.3050568993%;
+    left: 76.6553848279%;
+    transform: translate(-50%, -50%) scale(88.2548935862%);
+  }
+  15% {
+    top: 65.0806530738%;
+    left: 70.8763814705%;
+    transform: translate(-50%, -50%) scale(111.0979287345%);
+  }
+  20% {
+    top: 67.6953787257%;
+    left: 82.3607142636%;
+    transform: translate(-50%, -50%) scale(119.1778958606%);
+  }
+  25% {
+    top: 64.6037851743%;
+    left: 87.2235184096%;
+    transform: translate(-50%, -50%) scale(129.6334678947%);
+  }
+  30% {
+    top: 63.7775017532%;
+    left: 82.2612937052%;
+    transform: translate(-50%, -50%) scale(82.7336020861%);
+  }
+  35% {
+    top: 75.9618959475%;
+    left: 83.7338479405%;
+    transform: translate(-50%, -50%) scale(86.119598055%);
+  }
+  40% {
+    top: 74.5409663121%;
+    left: 82.1420249874%;
+    transform: translate(-50%, -50%) scale(95.6157562577%);
+  }
+  45% {
+    top: 60.4012297374%;
+    left: 73.0595977535%;
+    transform: translate(-50%, -50%) scale(84.0819200347%);
+  }
+  50% {
+    top: 66.2778646816%;
+    left: 70.58019261%;
+    transform: translate(-50%, -50%) scale(118.03198773%);
+  }
+  55% {
+    top: 64.265768501%;
+    left: 85.2428393944%;
+    transform: translate(-50%, -50%) scale(108.9197206002%);
+  }
+  60% {
+    top: 75.3408804656%;
+    left: 73.2524855058%;
+    transform: translate(-50%, -50%) scale(72.7473037208%);
+  }
+  65% {
+    top: 68.8875039281%;
+    left: 74.1434247741%;
+    transform: translate(-50%, -50%) scale(103.141473206%);
+  }
+  70% {
+    top: 74.3959164635%;
+    left: 88.8491815739%;
+    transform: translate(-50%, -50%) scale(94.7010073175%);
+  }
+  75% {
+    top: 74.1030649528%;
+    left: 81.3180429977%;
+    transform: translate(-50%, -50%) scale(102.5550628846%);
+  }
+  80% {
+    top: 65.2419170097%;
+    left: 86.4776780743%;
+    transform: translate(-50%, -50%) scale(121.9533822409%);
+  }
+  85% {
+    top: 69.3792664195%;
+    left: 82.8952121796%;
+    transform: translate(-50%, -50%) scale(81.4809412694%);
+  }
+  90% {
+    top: 70.7136538329%;
+    left: 80.3407746321%;
+    transform: translate(-50%, -50%) scale(111.703169846%);
+  }
+  100% {
+    top: 70%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 .popup-information__wrap {
   position: relative;
   display: grid;

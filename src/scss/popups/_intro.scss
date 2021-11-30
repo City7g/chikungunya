@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .intro {
   position: fixed;
   top: 0;
@@ -102,6 +104,8 @@
 
     pointer-events: none;
 
+    animation: intro-virus-one 100s linear infinite;
+
     @media (max-width: $main) {
       width: 140px;
     }
@@ -110,6 +114,8 @@
       width: 12vw;
       top: 80%;
       left: 10%;
+
+      animation-name: intro-virus-two;
 
       @media (max-width: $main) {
         width: 85px;
@@ -122,9 +128,23 @@
       left: 65%;
       opacity: 0.63;
 
+      animation-name: intro-virus-three;
+
       @media (max-width: $main) {
         width: 100px;
       }
     }
   }
+}
+
+@keyframes intro-virus-one {
+  @include virus-anim(0.15, 0.15, 0.1);
+}
+
+@keyframes intro-virus-two {
+  @include virus-anim(0.1, 0.8, 0.1);
+}
+
+@keyframes intro-virus-three {
+  @include virus-anim(0.8, 0.7, 0.1);
 }

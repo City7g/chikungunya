@@ -72,20 +72,20 @@ const animVirus = item => {
 if (document.querySelector('.preloader__virus')) {
   document.querySelectorAll('.preloader__virus').forEach(item => {
     item.style.transition = '2s all linear'
-    animVirus(item)
-    const animVirusInterval = setInterval(() => {
-      animVirus(item)
-    }, 2000);
+    // animVirus(item)
+    // const animVirusInterval = setInterval(() => {
+    //   animVirus(item)
+    // }, 2000);
   })
 }
 
 if (document.querySelector('.intro__virus')) {
   document.querySelectorAll('.intro__virus').forEach(item => {
     item.style.transition = '2s all linear'
-    animVirus(item)
-    const animVirusInterval = setInterval(() => {
-      animVirus(item)
-    }, 2000);
+    // animVirus(item)
+    // const animVirusInterval = setInterval(() => {
+    //   animVirus(item)
+    // }, 2000);
   })
 }
 

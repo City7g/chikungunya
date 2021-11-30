@@ -10,6 +10,22 @@ const resetForm = (form) => {
   })
 }
 
+const checkNumInputs = () => {
+  const numInputs = document.querySelectorAll('input[type="tel"]');
+
+  numInputs.forEach(item => {
+    item.addEventListener('input', e => {
+      if (item.value.length > 10) {
+        e.preventDefault()
+      }
+      item.value = item.value.replaceAll(/\D/g, '');
+      if (item.value.length > 10) {
+        item.value = item.value.substring(0, 10)
+      }
+    });
+  });
+};
+
 const validationForm = (form) => {
   let isValidForm = true
 
@@ -60,6 +76,10 @@ const validationForm = (form) => {
 // }
 
 const form = () => {
+  if (document.querySelector('input[type="tel"]')) {
+    checkNumInputs()
+  }
+
   if (document.querySelector('form')) {
     document.querySelectorAll('form').forEach(item => {
       item.setAttribute('novalidate', true)

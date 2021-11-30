@@ -1,8 +1,32 @@
+@use 'sass:math';
+
 @mixin font-face($font-family, $font-name, $weight: 400, $style: normal) {
   @font-face {
     font-family: $font-family;
-    src: url("/fonts/"+$font-family+"/"+$font-name+".woff2") format("woff2"), url($font-family+"/"+$font-name+".woff") format("woff");
+    src: url('/fonts/'+$font-family+'/'+$font-name+'.woff2') format('woff2'), url($font-family+'/'+$font-name+'.woff') format('woff');
     font-weight: $weight;
     font-style: $style;
+  }
+}
+
+@mixin virus-anim($startX, $startY, $cof) {
+  0% {
+    top: math.percentage($startY);
+    left: math.percentage($startX);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  @for $i from 1 to 19 {
+    $side: $i * 5;
+
+    #{$side}% {
+      top: math.percentage(math.random() * $cof * 2 + $startY - $cof);
+      left: math.percentage(math.random() * $cof * 2 + $startX - $cof);
+      transform: translate(-50%, -50%) scale(math.percentage(math.random() * 0.6 + 0.7));
+    }
+  }
+  100% {
+    top: math.percentage($startY);
+    left: math.percentage($startX);
+    transform: translate(-50%, -50%) scale(1);
   }
 }

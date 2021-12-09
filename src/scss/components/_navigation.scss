@@ -179,21 +179,119 @@
 }
 
 .navigation-share {
+  position: relative;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
-  color: $white;
-  font-size: 13px;
-  line-height: 20px;
+  padding: 5px 15px;
 
   @media (max-width: $main) {
     display: none;
   }
 
-  & img {
+  &__text {
+    color: $white;
+    font-size: 13px;
+    line-height: 20px;
+    cursor: default;
+
+    transition: 0.3s all ease;
+  }
+
+  &:hover &__text {
+    opacity: 0;
+  }
+
+  &__icons {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translate(-20%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px;
+
+    opacity: 0;
+    transition: 0.3s transform ease, 0.15s opacity ease;
+    transition-delay: 0s, 0s;
+    transition-property: transform, opacity;
+
+    pointer-events: none;
+  }
+
+  &:hover &__icons {
+    right: 40px;
+    opacity: 1;
+    transform: translate(0, -50%);
+    pointer-events: auto;
+    transition-delay: 0s, 0.15s;
+  }
+
+  &__item {
+    position: relative;
+    // position: absolute;
+    // top: 50%;
+    // right: -8px;
+    // transform: translateY(-50%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 33px;
+    height: 33px;
+
+    padding: 5px;
+    margin-left: 20px;
+
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 1px rgba(53, 53, 53, 0.5);
+    opacity: 0.5;
+    transition: 0.3s all ease;
+
+    & img {
+      max-height: 15px;
+      max-width: 15px;
+    }
+  }
+
+  &__item:hover {
+    opacity: 1;
+  }
+
+  &__description {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding-top: 5px;
+
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    color: white;
+    // transition: 0.3s all ease;
+    opacity: 0;
+  }
+
+  &__item:hover &__description {
+    opacity: 1;
+  }
+
+  &__img {
     margin-left: 16px;
   }
+  
+  // &:hover &__img {
+  //   opacity: 0;
+  // }
 }
 
 .navigation-hamburger {

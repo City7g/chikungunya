@@ -2,7 +2,7 @@
 import { preloader } from './preloader'
 import { card } from './card'
 import { hamburger } from './hamburger'
-import { navigator } from './navigator'
+import { nav } from './nav'
 import { parallax } from './parallax'
 import { scroll } from './scroll'
 import { popup, showPopup } from './popup'
@@ -13,9 +13,9 @@ import { test } from './test'
 preloader()
 card()
 hamburger()
-navigator()
+nav()
 // parallax()
-if (window.location.pathname === '/') {
+if (window.location.pathname !== '/privacy.html') {
   scroll()
 }
 popup()
@@ -32,12 +32,12 @@ document.querySelectorAll('.questions__item li').forEach(item => {
     } else {
       item.closest('.questions__item').querySelectorAll('.questions__item p').forEach(i => { i.style.height = 0 + 'px' })
     }
-    if(window.innerWidth >= 1200 && window.innerHeight < 900) {
+    if (window.innerWidth >= 1200 && window.innerHeight < 900) {
       showPopup('.popup-question')
       document.querySelector('.popup-question__title').textContent = item.querySelector('h5').textContent
       document.querySelector('.popup-question__text').textContent = item.querySelector('p').textContent
     } else {
-      if(item.querySelector('p').clientHeight > 20) {
+      if (item.querySelector('p').clientHeight > 20) {
         item.querySelectorAll('p').forEach(i => {
           i.style.height = ''
         })
@@ -62,6 +62,29 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 })
 
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.section').forEach(item => {
+    item.style.flex = `0 0 ${item.scrollWidth * 0.8 - 500}px`
+  })
+})
+
+
+
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+//   const date = new Date()
+
+//   const addCopy = (selector) => {
+//     if (document.querySelector(selector)) {
+//       // document.querySelector(selector).textContent = `© ${date.getFullYear()} ${document.querySelector(selector).textContent}`
+//       document.querySelector(selector).textContent += ` ${months[date.getMonth()]} ${date.getFullYear()}`
+//     }
+//   }
+
+//   addCopy('.footer__copy')
+//   addCopy('.privacy-footer p')
+// })
 
 // Privacy header
 if (window.location.pathname === '/privacy.html') {

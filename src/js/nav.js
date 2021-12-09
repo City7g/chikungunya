@@ -1,6 +1,6 @@
 import { setScrollX, setCurrentScrollX } from './scroll'
 
-const navigator = () => {
+const nav = () => {
   document.querySelectorAll('.navigation-links a[href^="#"], .footer-links a[href^="#"]').forEach(item => {
     item.addEventListener('click', (e) => {
       e.preventDefault()
@@ -16,7 +16,7 @@ const navigator = () => {
         setCurrentScrollX(currentScrollX)
       }
 
-      if (window.location.pathname !== '/') {
+      if (window.location.pathname === '/privacy.html') {
         window.location.href = '/';
       }
 
@@ -24,6 +24,19 @@ const navigator = () => {
       document.querySelector('.navigation-hamburger').classList.remove('active')
     })
   })
+
+
+  document.querySelector('.navigation-share__item:last-child').addEventListener('click', e => {
+    e.preventDefault()
+
+    navigator.clipboard.writeText('https://chikungunya.com/')
+      .then(() => {
+        document.querySelector('.navigation-share__item:last-child img').src = "img/icon/done.svg"
+        setTimeout(() => {
+          document.querySelector('.navigation-share__item:last-child img').src = "img/icon/copy-link.svg"
+        }, 1500);
+      })
+  })
 }
 
-export { navigator }
+export { nav }

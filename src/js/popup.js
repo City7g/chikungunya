@@ -27,7 +27,7 @@ const closePopup = (popupName, isFirstPopup = true) => {
 }
 
 const popup = () => {
-  document.querySelectorAll('a[href="#"]').forEach(item => {
+  document.querySelectorAll('a[href="#symptoms"]').forEach(item => {
     item.addEventListener('click', e => {
       e.preventDefault()
 

@@ -1,10 +1,11 @@
+import Inputmask from "inputmask"
 import { showPopup, closePopup } from './popup'
 
 const resetForm = (form) => {
   form.querySelectorAll('input, textarea').forEach(i => {
     if (i.type === 'checkbox') {
       i.checked = false
-    } else if (i.type === 'text' || i.type === 'email' || i.tagName === "TEXTAREA") {
+    } else if (i.type === 'text' || i.type === 'email' || i.type === 'tel' || i.tagName === "TEXTAREA") {
       i.value = ''
     }
   })
@@ -18,9 +19,10 @@ const checkNumInputs = () => {
       if (item.value.length > 10) {
         e.preventDefault()
       }
+      item.value = item.value.replace(/\+/g, '');
       item.value = item.value.replaceAll(/\D/g, '');
-      if (item.value.length > 10) {
-        item.value = item.value.substring(0, 10)
+      if (item.value.length > 13) {
+        item.value = item.value.substring(0, 13)
       }
     });
   });
@@ -30,7 +32,7 @@ const validationForm = (form) => {
   let isValidForm = true
 
   form.querySelectorAll('input, textarea').forEach(i => {
-    if (i.type === 'checkbox') {
+    if (i.type === 'checkbox' && !i.name) {
       if (!i.checked) {
         i.nextElementSibling.style.outlineColor = 'red'
         setTimeout(() => {
@@ -76,9 +78,14 @@ const validationForm = (form) => {
 // }
 
 const form = () => {
-  if (document.querySelector('input[type="tel"]')) {
-    checkNumInputs()
-  }
+  const selector = document.querySelectorAll("input[type='tel']");
+
+  const im = new Inputmask("(999) 999-9999");
+  im.mask(selector);
+
+  // if (document.querySelector('input[type="tel"]')) {
+  //   checkNumInputs()
+  // }
 
   if (document.querySelector('form')) {
     document.querySelectorAll('form').forEach(item => {
@@ -91,9 +98,17 @@ const form = () => {
 
         if (isValidForm) {
           let formData = new FormData(item)
+          if (item.getAttribute('data-name')) {
+            formData.append('formName', item.getAttribute('data-name'))
+          }
+
+          item.querySelectorAll('input[type="checkbox"][name]').forEach(i => {
+            formData.set(i.name, i.checked ? 'True' : 'False')
+          })
+
           formData = Object.fromEntries(formData)
 
-          const response = await fetch('mail.php', {
+          const response = await fetch('inc/mail.php', {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {
@@ -110,18 +125,12 @@ const form = () => {
             closePopup(document.querySelector('.popup-form'), false)
           }
 
-          let responseText = await response.text()
-          // responseText = await JSON.parse(responseText)
-          console.log(responseText)
-
-          console.log(response)
-
           if (response.ok) {
             document.querySelector('.popup-thank__title').textContent = 'Thank You'
             document.querySelector('.popup-thank__text').textContent = 'Your form has been submitted.'
           } else {
             document.querySelector('.popup-thank__title').textContent = 'Error'
-            document.querySelector('.popup-thank__text').textContent = responseText ? responseText : 'Server error!'
+            document.querySelector('.popup-thank__text').textContent = 'Server error!'
           }
 
           showPopup('.popup-thank')

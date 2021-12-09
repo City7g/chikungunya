@@ -1,7 +1,7 @@
 .popup.popup-form
   .popup__wrap.popup-form__wrap
     h3.title-h3.popup-form__title Share Your Story
-    form.main-form.popup-form__form
+    form.main-form.popup-form__form(data-name="share")
       label.main-form__input
         h4 First Name
         input(type="text", placeholder="First Name", name="first")
@@ -21,10 +21,10 @@
       label.main-form__checkbox
         input(type="checkbox")
         span
-        span I confirm that I am a US resident, and understand the content has been created for US residents only. 
+        span By clicking this box, I confirm that I am 18 years of age or older, a resident of the U.S. and am indicating that I would like to receive information from Emergent Biosolutions and/or be contacted regarding chikungunya and my experiences
       label.main-form__checkbox
         input(type="checkbox")
         span
-        span I have read and agree to the <a href="/privacy" target="_blank">Privacy Policy</a>.
+        span I have read and agree to the <a href="/privacy.html" target="_blank">Privacy Policy</a>.
       button(type="submit").main-button.main-form__button Submit
     .popup__close.popup-form__close

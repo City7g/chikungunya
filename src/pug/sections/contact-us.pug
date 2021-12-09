@@ -17,7 +17,7 @@ section.contact-us#six
       p.main-text.section-form__text Emergent BioSolutions Inc.<br>400 Professional Drive, Suite 400<br>Gaithersburg, MD 20879<br>240-631-3200
       a(href="mailto:hello@chikungunya.com") hello@chikungunya.com 
 
-    form.main-form(action="mail.php" method="post")
+    form.main-form(data-name="contact-us")
       label.main-form__input
         h4 First Name
         input(type="text", placeholder="First Name", name="first")
@@ -31,7 +31,7 @@ section.contact-us#six
         input(type="email", placeholder="E-mail", name="email")
         span.main-form__error Please enter valid e-mail address.
       label.main-form__checkbox
-        input(type="checkbox")
+        input(type="checkbox", name="subscribe")
         span
         span I would like to receive information about travel health from Emergent Travel Health Inc. I understand that I can opt out at any time by clicking the Unsubscribe link in any email.
       label.main-form__checkbox

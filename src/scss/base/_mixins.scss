@@ -3,30 +3,100 @@
 @mixin font-face($font-family, $font-name, $weight: 400, $style: normal) {
   @font-face {
     font-family: $font-family;
-    src: url('/fonts/'+$font-family+'/'+$font-name+'.woff2') format('woff2'), url($font-family+'/'+$font-name+'.woff') format('woff');
+    src: url('fonts/'+$font-family+'/'+$font-name+'.woff2') format('woff2'), url('fonts/'+$font-family+'/'+$font-name+'.woff') format('woff');
     font-weight: $weight;
     font-style: $style;
   }
 }
 
+@mixin text-shadow($offset, $blur, $color) {
+  text-shadow:
+    $offset 0 $blur $color,
+    $offset $offset $blur $color,
+    0 $offset $blur $color,
+    -#{$offset} $offset $blur $color,
+    -#{$offset} 0 $blur $color,
+    -#{$offset} -#{$offset} $blur $color,
+    0 -#{$offset} $blur $color,
+    $offset -#{$offset} $blur $color;
+}
+
 @mixin virus-anim($startX, $startY, $cof) {
+  $positionX: 0;
+  $positionY: 0;
+  $eangle: 0;
+
   0% {
-    top: math.percentage($startY);
-    left: math.percentage($startX);
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(0, 0);
   }
-  @for $i from 1 to 19 {
+  @for $i from 1 to 20 {
+    $randomDistance: math.random(1) + 4;
+    $changeEangle: math.random(50) + 50;
+
+    @if math.random() > 0.5 {
+      $changeEangle: $changeEangle * -1;
+    }
+    @if $eangle > 150 or $eangle < -150 {
+      $eangle: 0;
+    } @else {
+      $eangle: $eangle + $changeEangle;
+    }
+    // $eangle: $randomEangle2 + $eangle;
+    // @if $eangle > 360 {
+    //   $eangle: $eangle - 360;
+    // }
+    $randomEangle: math.random(359);
+    $randomEangle: math.div($randomEangle * math.$pi, 180);
     $side: $i * 5;
 
+    @if($positionX > 20 or $positionX < 0) {
+      $positionX: 10;
+    } @else {
+      $positionX: math.cos($randomEangle) * $randomDistance + $positionX;
+    }
+    @if($positionY > 10 or $positionY < 0) {
+      $positionY: 5;
+    } @else {
+      $positionY: math.sin($randomEangle) * $randomDistance + $positionY;
+    }
+
     #{$side}% {
-      top: math.percentage(math.random() * $cof * 2 + $startY - $cof);
-      left: math.percentage(math.random() * $cof * 2 + $startX - $cof);
-      transform: translate(-50%, -50%) scale(math.percentage(math.random() * 0.6 + 0.7));
+      transform: translate($positionX+vw, $positionY+vw) scale(math.random() * 0.6 + 0.7) rotate($eangle + deg);
     }
   }
   100% {
-    top: math.percentage($startY);
-    left: math.percentage($startX);
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(0, 0);
+  }
+}
+
+@function decimal-round ($number, $digits: 0, $mode: round) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+      @warn '#{ $number } is not a number.';
+      @return $number;
+  }
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+      @warn '#{ $digits } is not a number.';
+      @return $number;
+  } @else if not unitless($digits) {
+      @warn '#{ $digits } has a unit.';
+      @return $number;
+  }
+  @if $digits > 0 {
+      @for $i from 1 through $digits {
+          $n: $n * 10;
+      }
+  }
+  @if $mode == round {
+      @return math.div(round($number * $n), $n);
+  } @else if $mode == ceil {
+      @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+      @return floor($number * $n) / $n;
+  } @else {
+      @warn '#{ $mode } is undefined keyword.';
+      @return $number;
   }
 }

@@ -2,14 +2,25 @@
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
 
   padding: 18px 50px 18px 18px;
 
   background-color: rgba($white, 0.75);
-  // transition: 0.3s all ease;
+  transition: 0.3s opacity ease, 0.6s transform ease;
+  transform-origin: right center;
   border-radius: 10px;
   cursor: pointer;
+
+  &--left {
+    transform-origin: left center;
+  }
+
+  @media (min-width: $main2) {
+    &:hover {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 
   @media (max-width: $main) {
     position: relative;
@@ -225,3 +236,36 @@
     gap: 20px;
   }
 }
+
+// .map.map--america .card.hide {
+//   // transform: translate(-50%, -100vh);
+//   animation: 0.6s card-bottom ease forwards;
+// }
+
+// .map.map--america .card {
+//   // transform: translate(-50%, -100vh);
+//   animation: 0.6s card-top ease forwards;
+// }
+
+// .map .card.hide {
+//   transform: translate(-50%, -50%) scale(0.6);
+//   opacity: 0.6;
+// }
+
+// @keyframes card-top {
+//   0% {
+//     transform: translate(-50%, -100vh);
+//   }
+//   100% {
+//     transform: translate(-50%, -50%);
+//   }
+// }
+
+// @keyframes card-bottom {
+//   0% {
+//     transform: translate(-50%, -50%);
+//   }
+//   100% {
+//     transform: translate(-50%, 100vh);
+//   }
+// }

@@ -2,17 +2,41 @@ const { src, dest, watch } = require('gulp');
 const pug = require('gulp-pug');
 // const concat = require('gulp-concat');
 const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
 const webpack = require('webpack-stream');
 const browsersync = require('browser-sync').create();
+const gutil = require('gulp-util');
+const ftp = require('vinyl-ftp');
 
 // npm i gulp gulp-pug gulp-sass sass webpack-stream browser-sync
+
+
+
+
+function deploy() {
+  const conn = ftp.create({
+    host: '74.208.33.224',
+    user: 'chikungunya',
+    password: 'ImgRMozp#16up3wl',
+    parallel: 1,
+    log: gutil.log
+  });
+
+  const globs = [
+    './dist/mail.php'
+  ];
+
+  return src(globs, { base: './dist', buffer: false })
+    // .pipe(conn.newer('/staging.chikungunya.com')) // only upload newer files
+    .pipe(conn.dest('/staging.chikungunya.com/inc'));
+}
 
 function browserSync() {
   browsersync.init({
     server: {
       baseDir: './dist/'
     },
-    posr: 8080,
+    port: 3000,
     notify: false
   })
 }
@@ -20,6 +44,7 @@ function browserSync() {
 function styles() {
   return src('./src/scss/*.scss')
     .pipe(sass())
+    .pipe(autoprefixer())
     .pipe(dest('./dist'))
     .pipe(browsersync.stream())
 };
@@ -86,6 +111,9 @@ exports.scriptsTwo = scriptsTwo;
 exports.images = images;
 exports.fonts = fonts;
 exports.browserSync = browserSync;
+exports.deploy = () => {
+  watch('./dist/mail.php', deploy);
+};
 
 
 exports.default = () => {

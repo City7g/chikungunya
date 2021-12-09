@@ -12,8 +12,24 @@ header.navigation
           p.navigation-links__text= values[x].name
     
     .navigation-share
-      span Share
-      img(src="/img/share-icon.svg", alt="")
+      span.navigation-share__text Share
+      img(src="/img/share-icon.svg", alt="").navigation-share__img
+      .navigation-share__icons
+        a(href="http://www.linkedin.com/shareArticle?mini=true&url=https://staging.chikungunya.com/" target="_blank").navigation-share__item
+          span.navigation-share__description LinkedIn
+          img(src="img/icon/linkedin.svg", alt="")
+        a(href="https://twitter.com/intent/tweet/?url=https://chikungunya.com/&text=Visit chikungunya.com to learn about Chikungunya disease – what causes it and how to protect yourself." target="_blank").navigation-share__item
+          span.navigation-share__description Twitter
+          img(src="img/icon/twitter.svg", alt="")
+        a(href="https://www.facebook.com/sharer/sharer.php?u=https://staging.chikungunya.com/" target="_blank").navigation-share__item
+          span.navigation-share__description Facebook
+          img(src="img/icon/facebook.svg", alt="")
+        a(href='mailto:?subject=Visit%20Chikungunya.com&body=Visit%20chikungunya.com%20to%20learn%20about%20Chikungunya%20disease%20–%20what%20causes%20it%20and%20how%20to%20protect%20yourself.%0Ahttps://chikungunya.com' target="_blank").navigation-share__item
+          span.navigation-share__description Mail
+          img(src="img/icon/mail.svg", alt="")
+        a(href="#").navigation-share__item
+          span.navigation-share__description Copy
+          img(src="img/icon/copy-link.svg", alt="")
 
     button.navigation-hamburger
       span

@@ -18,10 +18,16 @@ const card = () => {
       } else {
         document.querySelector('.popup-card__title').textContent = item.querySelector('.card__title').textContent
         document.querySelector('.popup-card__img').src = item.querySelector('.card__img').getAttribute('src')
-        document.querySelector('.popup-card__description').textContent = item.querySelector('.card__description').textContent
+        document.querySelector('.popup-card__description').innerHTML = item.querySelector('.card__description').innerHTML
 
         showPopup('.popup-card')
       }
+    })
+  })
+  
+  document.querySelectorAll('.intro__anim').forEach(item => {
+    item.addEventListener('click', () => {
+      showPopup('.popup-mosquito')
     })
   })
 }

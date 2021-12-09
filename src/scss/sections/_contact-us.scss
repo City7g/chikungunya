@@ -11,6 +11,8 @@
   padding: 60px 300px 50px;
   // margin: auto 0;
 
+  // overflow: hidden;
+
   @media (min-width: $main2) and (max-height: 900px) {
     grid-template-columns: 400px 700px;
 
@@ -24,6 +26,8 @@
     height: auto;
 
     padding: 140px 35px 75px;
+
+    overflow: hidden;
   }
 
   @media (max-width: $mobile) {

@@ -1,8 +1,43 @@
 let isShowContent = false
 
 const preloader = () => {
+  const hidePreloader = () => {
+    setTimeout(() => {
+      if (document.querySelector('.preloader')) {
+        document.querySelector('.preloader').style.opacity = 0
+      }
+    }, 1200);
+  }
+
   window.addEventListener('load', () => {
     isShowContent ? hidePreloader() : isShowContent = true
+  })
+
+  let mouseInTarget = false
+  window.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.intro__image')) {
+      setTimeout(() => {
+        if (!mouseInTarget) {
+          document.querySelector('.intro__image').classList.remove('active')
+        }
+      }, 650);
+      document.querySelector('.intro__image').addEventListener('mouseenter', () => {
+        document.querySelector('.intro__image').classList.add('active')
+        mouseInTarget = true
+      })
+      document.querySelector('.intro__button').addEventListener('mouseenter', () => {
+        document.querySelector('.intro__image').classList.add('active')
+        mouseInTarget = true
+      })
+      document.querySelector('.intro__image').addEventListener('mouseleave', () => {
+        document.querySelector('.intro__image').classList.remove('active')
+        mouseInTarget = false
+      })
+      document.querySelector('.intro__button').addEventListener('mouseleave', () => {
+        document.querySelector('.intro__image').classList.remove('active')
+        mouseInTarget = false
+      })
+    }
   })
 
   if (document.querySelector('.intro')) {
@@ -24,70 +59,62 @@ const preloader = () => {
     //   })
     // })
   }
-
-  const hidePreloader = () => {
-    setTimeout(() => {
-      if (document.querySelector('.preloader')) {
-        document.querySelector('.preloader').style.opacity = 0
-      }
-    }, 1200);
-  }
 }
 
-const animVirus = item => {
-  let virusTop = window.getComputedStyle(item).getPropertyValue('top')
-  let virusLeft = window.getComputedStyle(item).getPropertyValue('left')
-  // console.log(item)
-  virusTop = +virusTop.substr(0, virusTop.length - 2);
-  virusLeft = +virusLeft.substr(0, virusLeft.length - 2);
-  const cof = window.innerWidth > 991 ? 100 : 30
-  let randomLeft = Math.random() * (cof) - cof/2
-  let randomTop = Math.random() * (cof) - cof/2
-  if(randomLeft < 5 && randomLeft > -5) {
-    randomLeft = 5
-  }
-  if(randomTop < 5 && randomTop > -5) {
-    randomTop = 5
-  }
+// const animVirus = item => {
+//   let virusTop = window.getComputedStyle(item).getPropertyValue('top')
+//   let virusLeft = window.getComputedStyle(item).getPropertyValue('left')
+//   // console.log(item)
+//   virusTop = +virusTop.substr(0, virusTop.length - 2);
+//   virusLeft = +virusLeft.substr(0, virusLeft.length - 2);
+//   const cof = window.innerWidth > 991 ? 100 : 30
+//   let randomLeft = Math.random() * (cof) - cof/2
+//   let randomTop = Math.random() * (cof) - cof/2
+//   if(randomLeft < 5 && randomLeft > -5) {
+//     randomLeft = 5
+//   }
+//   if(randomTop < 5 && randomTop > -5) {
+//     randomTop = 5
+//   }
 
-  virusTop += randomLeft;
-  if (virusTop < 100) {
-    virusTop = 100
-  }
-  if (virusTop > window.innerHeight - 100) {
-    virusTop = window.innerHeight - 100
-  }
-  virusLeft += randomTop;
-  if (virusLeft < 100) {
-    virusLeft = 100
-  }
-  if (virusLeft > window.innerWidth - 100) {
-    virusLeft = window.innerWidth - 100
-  }
+//   virusTop += randomLeft;
+//   if (virusTop < 100) {
+//     virusTop = 100
+//   }
+//   if (virusTop > window.innerHeight - 100) {
+//     virusTop = window.innerHeight - 100
+//   }
+//   virusLeft += randomTop;
+//   if (virusLeft < 100) {
+//     virusLeft = 100
+//   }
+//   if (virusLeft > window.innerWidth - 100) {
+//     virusLeft = window.innerWidth - 100
+//   }
 
-  item.style.top = `${virusTop}px`
-  item.style.left = `${virusLeft}px`
-}
+//   item.style.top = `${virusTop}px`
+//   item.style.left = `${virusLeft}px`
+// }
 
-if (document.querySelector('.preloader__virus')) {
-  document.querySelectorAll('.preloader__virus').forEach(item => {
-    item.style.transition = '2s all linear'
-    // animVirus(item)
-    // const animVirusInterval = setInterval(() => {
-    //   animVirus(item)
-    // }, 2000);
-  })
-}
+// if (document.querySelector('.preloader__virus')) {
+//   document.querySelectorAll('.preloader__virus').forEach(item => {
+//     item.style.transition = '2s all linear'
+//     animVirus(item)
+//     const animVirusInterval = setInterval(() => {
+//       animVirus(item)
+//     }, 2000);
+//   })
+// }
 
-if (document.querySelector('.intro__virus')) {
-  document.querySelectorAll('.intro__virus').forEach(item => {
-    item.style.transition = '2s all linear'
-    // animVirus(item)
-    // const animVirusInterval = setInterval(() => {
-    //   animVirus(item)
-    // }, 2000);
-  })
-}
+// if (document.querySelector('.intro__virus')) {
+//   document.querySelectorAll('.intro__virus').forEach(item => {
+//     item.style.transition = '2s all linear'
+//     animVirus(item)
+//     const animVirusInterval = setInterval(() => {
+//       animVirus(item)
+//     }, 2000);
+//   })
+// }
 
 // if(document.querySelector('.preloader')) {
 //   document.querySelector('.preloader').addEventListener('mousemove', (e) => {

@@ -6,9 +6,24 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Chikungunya
-    //- link(rel='preload' as='font' type='font/woff2' href='fonts/Montserrat/Montserrat-Bold.woff2' crossorigin='')
-    link(rel="reload" href="fonts/Montserrat/Montserrat-Regular.woff2" as="font")
+    title Learn about chikungunya – what causes it and how to protect yourself.
+    meta(name="description", content="Traveling to the tropics? Learn about mosquitoes and the chikungunya virus.")
+
+    //- OG
+    meta(property="og:title" content="Learn about chikungunya – what causes it and how to protect yourself.")
+    meta(property="og:url" content="https://staging.chikungunya.com/")
+    meta(property="og:description" content="Traveling to the tropics? Learn about mosquitoes and the chikungunya virus.")
+    meta(property="og:image" content="img/og-image.png")
+
+    //- Favicon
+    link(rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png')
+
+    //- Fonts
+    link(rel="preload" href="fonts/Montserrat/Montserrat-Regular.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/Montserrat/Montserrat-Bold.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/Montserrat/Montserrat-SemiBold.woff2" as="font" crossorigin="anonymous")
     link(rel="stylesheet", href="main.css")
 
   body
@@ -17,11 +32,6 @@ html(lang="en")
     if prod
       include ./components/preloader
     include ./components/navigation
-
-    //- embed(src='img/CHIKUNGUNYA-Countries-V2.pdf' frameborder='0' scrolling='auto' height='100%' width='100%')
-    //- iframe(src='img/CHIKUNGUNYA-Countries-V2.pdf' frameborder='0' scrolling='auto' height='100%' width='100%')
-
-    
 
     main.main-content
       include ./maps/america
@@ -38,6 +48,7 @@ html(lang="en")
     //- Popups
     include ./popups/information
     include ./popups/card
+    include ./popups/mosquito
     include ./popups/form
     include ./popups/thank-you
     include ./popups/video

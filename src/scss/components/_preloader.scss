@@ -7,7 +7,7 @@
   z-index: 999;
 
   background-color: $primary;
-  transition: 0.6s all ease;
+  transition: 0.6s opacity ease;
   pointer-events: none;
 
   &__mosquito {
@@ -29,18 +29,19 @@
   &__virus {
     position: absolute;
     z-index: -1;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
 
     mix-blend-mode: multiply;
     pointer-events: none;
 
-    animation: preloader-virus-one 100s linear infinite;
+    animation: preloader-virus-one 100s ease-in-out infinite;
 
     &--one {
       width: 18vw;
       top: 0;
       left: 0;
       opacity: 0.7;
+      animation-delay: 0.5s;
 
       @media (max-width: $main) {
         width: 120px;
@@ -49,53 +50,61 @@
 
     &--two {
       width: 12vw;
-      top: 70%;
+      top: 65%;
       left: 150px;
       opacity: 0.6;
+      animation-delay: 1s;
 
       animation-name: preloader-virus-two;
 
       @media (max-width: $main) {
         width: 120px;
+        left: 50px;
       }
     }
 
     &--three {
       width: 9vw;
-      top: 70%;
-      left: 65%;
+      top: 60%;
+      left: 60%;
       opacity: 0.5;
+      animation-delay: 1.5s;
 
       animation-name: preloader-virus-three;
 
       @media (max-width: $main) {
-        width: 100px;
+        width: 110px;
+        left: 50%;
       }
     }
 
     &--four {
       width: 13vw;
       top: 10%;
-      left: 80%;
+      left: 70%;
       opacity: 0.8;
+      animation-delay: 2s;
 
       animation-name: preloader-virus-four;
 
       @media (max-width: $main) {
-        width: 70px;
+        width: 90px;
+        left: 60%;
       }
     }
 
     &--five {
       width: 12vw;
       top: 40%;
-      left: 80%;
+      left: 70%;
       opacity: 0.7;
+      animation-delay: 2.5s;
 
       animation-name: preloader-virus-five;
 
       @media (max-width: $main) {
         width: 80px;
+        left: 60%;
       }
     }
   }

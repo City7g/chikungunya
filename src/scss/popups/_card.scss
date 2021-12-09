@@ -1,3 +1,4 @@
+.popup-mosquito,
 .popup-card {
   &__wrap {
     position: relative;
@@ -48,6 +49,14 @@
     object-position: center;
   }
 
+  &__list {
+    margin-top: 5px;
+
+    li {
+      color: $primary;
+    }
+  }
+
   &__close {
     position: absolute;
     top: 12px;
@@ -83,5 +92,17 @@
         width: 10px;
       }
     }
+  }
+}
+
+.popup-mosquito {
+  z-index: 1001;
+
+  padding: 10px 20px 20px;
+
+  overflow: hidden;
+
+  &__img {
+    transform: scale(1.15);
   }
 }

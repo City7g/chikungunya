@@ -3,8 +3,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const parallaxSection = () => {
+  // if (document.querySelector('#one')) {
+  //   gsap.from('#one .card', {
+  //     y: 1000,
+  //     stagger: 0.2,
+  //     delay: 2
+  //   })
+  // }
 
-window.addEventListener('load', () => {
   if (document.querySelector('#two')) {
     gsap.to('#two .section__wrap', {
       scrollTrigger: {
@@ -12,7 +19,8 @@ window.addEventListener('load', () => {
         start: '0% ' + document.querySelector('#two').offsetLeft,
         end: '100% 0%',
         horizontal: true,
-        scrub: true
+        scrub: true,
+        invalidateOnRefresh: true
       },
       x: () => {
         return -(document.querySelector('#two .section__wrap').scrollWidth - document.querySelector('#two').offsetWidth)
@@ -28,7 +36,8 @@ window.addEventListener('load', () => {
         start: '0% 100%',
         end: '100% 0%',
         horizontal: true,
-        scrub: true
+        scrub: true,
+        invalidateOnRefresh: true
       },
       x: () => {
         return -(document.querySelector('#three .section__wrap').scrollWidth - document.querySelector('#three').offsetWidth)
@@ -42,9 +51,12 @@ window.addEventListener('load', () => {
       scrollTrigger: {
         trigger: '#four',
         start: '0% 100%',
-        end: '100% 0%',
+        end: () => {
+          return `${document.querySelector('#four').offsetWidth}px 0%`
+        },
         horizontal: true,
-        scrub: true
+        scrub: true,
+        invalidateOnRefresh: true
       },
       x: () => {
         return -(document.querySelector('#four .section__wrap').scrollWidth - document.querySelector('#four').offsetWidth)
@@ -61,7 +73,8 @@ window.addEventListener('load', () => {
         start: '0% 100%',
         end: '100% 0%',
         horizontal: true,
-        scrub: true
+        scrub: true,
+        invalidateOnRefresh: true
       },
       x: () => {
         return -(document.querySelector('#five .section__wrap').scrollWidth - document.querySelector('#five').offsetWidth)
@@ -77,7 +90,8 @@ window.addEventListener('load', () => {
         start: '0% 100%',
         end: '100% 0%',
         horizontal: true,
-        scrub: true
+        scrub: true,
+        invalidateOnRefresh: true
       },
       x: () => {
         return -(document.querySelector('#seven .section__wrap').scrollWidth - document.querySelector('#seven').offsetWidth)
@@ -85,7 +99,10 @@ window.addEventListener('load', () => {
       ease: 'linear'
     })
   }
+}
 
+window.addEventListener('load', () => {
+  parallaxSection()
 })
 
 
@@ -139,7 +156,21 @@ const customScroll = () => {
 
 let currentSectionInView = 'one';
 
+const animFirstSection = () => {
+  if (window.pageXOffset < 10) {
+    document.querySelector('#two').classList.add('section--anim')
+  } else {
+    document.querySelector('#two').classList.remove('section--anim')
+  }
+}
+
 const scroll = () => {
+  // animFirstSection()
+
+  document.querySelector('.scroll-anim__block').addEventListener('animationiteration', () => {
+    animFirstSection()
+  })
+
   if (document.querySelector('a.navigation-links__item')) {
     document.querySelector(`a.navigation-links__item[href="#${currentSectionInView}"]`).classList.add('active')
   }
@@ -171,8 +202,6 @@ const scroll = () => {
         scrollX = maxScrollWidth
       }
 
-
-
       customScroll()
 
       // window.scroll(currentScrollX, 0)
@@ -197,6 +226,19 @@ const scroll = () => {
       //       .forEach(item => observerSectionWithContent.observe(item))
       //   }
 
+      // console.log(document.querySelector('.card').getBoundingClientRect())
+      // document.querySelectorAll('.card').forEach(item => {
+      //   const itemLeft = item.getBoundingClientRect().left
+      //   const itemWidth = item.getBoundingClientRect().width
+      //   if(itemLeft < 100 || (itemLeft + itemWidth) > (window.innerWidth - 100)) {
+      //     item.classList.add('hide')
+      //   } else {
+      //     item.classList.remove('hide')
+      //   }
+      // })
+
+
+
       document.querySelectorAll('#one, #two, #three, #four, #five, #six, #seven').forEach((item, index) => {
         // console.log('#' + item.getAttribute('id') + ' - ' + item.getBoundingClientRect().left)
 
@@ -207,7 +249,7 @@ const scroll = () => {
           currentSectionInView = item.getAttribute('id')
         }
       })
-      
+
       if (document.querySelector('a.navigation-links__item')) {
         document.querySelector(`a.navigation-links__item[href="#${currentSectionInView}"]`).classList.add('active')
       }

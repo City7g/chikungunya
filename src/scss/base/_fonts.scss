@@ -4,9 +4,9 @@
 // @include font-face('OpenSans', 'OpenSans-Medium', 500);
 @include font-face('OpenSans', 'OpenSans-Bold', 700);
 
-// @include font-face('Montserrat', 'Montserrat-Regular');
+@include font-face('Montserrat', 'Montserrat-Regular', 400);
 @include font-face('Montserrat', 'Montserrat-Medium', 500);
-@include font-face('Montserrat', 'Montserrat-Medium', 600);
+@include font-face('Montserrat', 'Montserrat-SemiBold', 600);
 @include font-face('Montserrat', 'Montserrat-Bold', 700);
 
 // Main Fonts
@@ -95,6 +95,7 @@
   line-height: 24px;
   font-weight: 700;
   text-transform: uppercase;
+  font-family: 'Montserrat';
 
   color: #575757;
   border-radius: 48px;

@@ -1,5 +1,8 @@
 <?php
 
+require  'PHPMailer.php';
+require  'SMTP.php';
+
 $_POST = json_decode(file_get_contents("php://input"), true);
 
 if (!isset($_SERVER["HTTP_X_REQUESTED_WITH"]) and strtolower($_SERVER["HTTP_X_REQUESTED_WITH"]) != "xmlhttprequest") {
@@ -19,24 +22,54 @@ if (!isset($_POST["email"])) {
   die($output);
 }
 
-// die(var_dump($_POST));
+$labels = [
+  'first' => 'First Name',
+  'last' => 'Last Name',
+  'email' => 'Email',
+  'phone' => 'Phone',
+  'text' => 'Text',
+  'subscribe' => 'Subscribe'
+];
 
-$message = "";
+$formName = [
+  'contact-us' => 'Stay Connected',
+  'privacy' => 'Personal Information Request Form',
+  'share' => 'Share Your Story'
+];
+
+$labelFormName = isset($formName[$_POST['formName']]) ? $formName[$_POST['formName']] : "No subject!";
 
 foreach ($_POST as $key => $value) {
-  if ($value === "") continue;
+  if ($value === "" || $key === 'formName') continue;
+
+  $label = isset($labels[$key]) ? $labels[$key] : $key;
 
   $message .= "
-    <p><strong>$key</strong>: $value</p>
+    <p><strong>$label</strong>: $value</p>
   ";
 }
 
-$headers = "MIME-Version: 1.0\r\n" .
-  "Content-type: text/html; charset=utf-8\r\n" .
-  "From: info@chikungunya.com\r\n" .
-  "X-Mailer: PHP";
+$email = 'info@chikungunya.com';
+$message_body = $message;
+$subject = $labelFormName;
+$mail = new PHPMailer;
+$mail->isSMTP();
+// $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+$mail->Host = 'chikungunya.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'noreply@chikungunya.com';
+$mail->Password = 'i753f%qOled@#';
+// $mail->SMTPSecure = 'ssl'; 
+$mail->Port = 25;
+$mail->setFrom('noreply@chikungunya.com', 'chikungunya.com');
+$mail->addAddress($email);
 
-$sentMail = mail("havac35589@latovic.com", "No subject", $message, $headers);
+$mail->isHTML(true);
+$mail->Subject = $subject;
+$mail->Body = $message_body;
+$sentMail = $mail->send();
+
+// $sentMail = mail("info@chikungunya.com", "No subject", $message, $headers);
 
 if ($sentMail) {
   http_response_code(200);
